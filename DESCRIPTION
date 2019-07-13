@@ -1,0 +1,10 @@
+Package: RGoogleAds
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1
+Author: Johannes Burkhardt [aut,cre], Matthias Bannert[aut]
+Maintainer: Johannes Burkhardt <johannes.burkhardt at gmail.com>
+Description: Read data from the Google's Ads API into R. 
+License: MIT
+Encoding: UTF-8
+LazyData: true
