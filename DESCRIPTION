@@ -2,6 +2,9 @@ Package: RGoogleAds
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1
+Depends: R (≥ 3.0.0),
+Import: curl, jsonlite,
+Suggests: testthat
 Author: Johannes Burkhardt [aut,cre], Matthias Bannert[aut]
 Maintainer: Johannes Burkhardt <johannes.burkhardt at gmail.com>
 Description: Read data from the Google's Ads API into R. 
