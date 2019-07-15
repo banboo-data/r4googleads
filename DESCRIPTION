@@ -1,10 +1,18 @@
 Package: RGoogleAds
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Googls Ads API Interface
 Version: 0.1
-Author: Johannes Burkhardt [aut,cre], Matthias Bannert[aut]
-Maintainer: Johannes Burkhardt <johannes.burkhardt at gmail.com>
+Author: Johannes Burkhardt [aut,cre], Matthias Bannert [aut]
+Maintainer: Johannes Burkhardt <johannes.burkhardt@gmail.com>
 Description: Read data from the Google's Ads API into R. 
+Depends:
+    R (>= 3.0.0)
+Imports:
+    RCurl,
+    rjson
 License: MIT
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/rstats-lab/RGoogleAds
+BugReports: https://github.com/rstats-lab/RGoogleAds/issues
+RoxygenNote: 6.1.1
