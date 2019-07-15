@@ -14,5 +14,5 @@ New access token with corresponding time stamp.
 }
 \description{
 refresh_token returns a new valid access token. The access token deprecates after one hour and has to updated with the refresh token.
-Usually you need not to run refresh_token() explicitly since the whole authentication process is managed by \code{\link{do_auth}}.
+Usually you need not to run refresh_token() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
 }

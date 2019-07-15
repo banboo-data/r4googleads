@@ -1,17 +1,17 @@
 #' @title Invoke the Authentication Process with Google
 #' @description This function starts the authentication process with Google.
-#' Note that this functions needs user interaction.
+#' Note that this function needs user interaction.
 #' @param save logical denotes whether authentication information should be saved on disk. Defaults to TRUE.
 #' @return Dataframe with the credential information which is cached in working space
 #   and optionally saved as RData file in current working directory.
 #' @export
-do_auth <- function(save = T){
+authenticate <- function(save = T) {
   # do user interaction to store credentials in list
   # does not expire
-  if(file.exists(".google.auth.RData")){
+  if (file.exists(".google.auth.RData")) {
     load(".google.auth.RData")
-  } else{
-    credentials <- get_auth()
+  } else {
+    credentials <- get_credentials()
     access_token <- load_token(credentials)
     # credentials can be saved in workspace
     # for use with cron jobs etc
@@ -19,22 +19,22 @@ do_auth <- function(save = T){
     google_auth$credentials <- credentials
     google_auth$access <- access_token
 
-    if(save){
-      save("google_auth",file=".google.auth.RData")
+    if (save) {
+      save("google_auth", file = ".google.auth.RData")
 
       # make sure your credentials are ignored by svn and git ####
-      if (!file.exists(".gitignore")){
-        cat(".google.auth.RData",file=".gitignore",sep="\n")
+      if (!file.exists(".gitignore")) {
+        cat(".google.auth.RData", file = ".gitignore", sep = "\n")
       }
-      if (file.exists(".gitignore")){
-        cat(".google.auth.RData",file=".gitignore",append=TRUE)
+      if (file.exists(".gitignore")) {
+        cat(".google.auth.RData", file = ".gitignore",
+            append = TRUE)
       }
     }
   }
-  if(exists("google_auth")){
+  if (exists("google_auth")) {
     google_auth
   } else {
     cat("an error occurred.")
   }
-
 }
