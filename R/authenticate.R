@@ -27,8 +27,11 @@ authenticate <- function(save = T) {
         cat(".google.auth.RData", file = ".gitignore", sep = "\n")
       }
       if (file.exists(".gitignore")) {
-        cat(".google.auth.RData", file = ".gitignore",
-            append = TRUE)
+        suppressWarnings(gitignore <- paste(readLines(".gitignore"), collapse = " "))
+        if(!grepl(".google.auth.RData", gitignore)) {
+          cat(".google.auth.RData", file = ".gitignore",
+              append = TRUE)
+        }
       }
     }
   }
