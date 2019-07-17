@@ -13,21 +13,23 @@ load_token <- function(credlist) {
   #
   # Returns:
   #   access.token with corresponding time stamp
-  h <- curl::new_handle()
-  curl::handle_setform(h,
-                       code = credlist$c.token,
-                       client_id = credlist$c.id,
-                       client_secret = credlist$c.secret,
-                       redirect_uri = "urn:ietf:wg:oauth:2.0:oob",
-                       grant_type = "authorization_code",
-                       style = "POST")
+  h <- new_handle()
+  handle_setform(h,
+    code = credlist$c.token,
+    client_id = credlist$c.id,
+    client_secret = credlist$c.secret,
+    redirect_uri = "urn:ietf:wg:oauth:2.0:oob",
+    grant_type = "authorization_code",
+    style = "POST"
+  )
 
-  req <- curl::curl_fetch_memory("https://accounts.google.com/o/oauth2/token", handle = h)
+  req <- curl_fetch_memory("https://accounts.google.com/o/oauth2/token",
+                           handle = h)
 
-  a <- jsonlite::fromJSON(rawToChar(req$content))
+  a <- fromJSON(rawToChar(req$content))
 
   if (length(a) == 1) {
-    print("You need to update the token - run authenticate()")
+    message("You need to update the token - run authenticate()")
   } else {
     a$timeStamp <- as.numeric(Sys.time())
   }

@@ -51,7 +51,7 @@ get_credentials <- function() {
   if (exists("credentials")) {
     url <- sprintf("https://accounts.google.com/o/oauth2/auth?client_id=%s&response_type=code&scope=https://www.googleapis.com/auth/adwords&redirect_uri=urn:ietf:wg:oauth:2.0:oob&access_type=offline&approval_prompt=force",
                    credentials$c.id)
-    utils::browseURL(url)
+    browseURL(url)
     # Manual next-step: input code-parameter
     # to c.token variable and run load_token()
     cat("Authentication process needs your Client

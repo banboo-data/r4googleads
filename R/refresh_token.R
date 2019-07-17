@@ -12,14 +12,17 @@ refresh_token <- function(google_auth) {
   #   access.token$refreh_token and credentials as input
   # Returns:
   #   New access.token with corresponding time stamp
-  h <- curl::new_handle()
-  curl::handle_setform(h,
-                       refresh_token = google_auth$access$refresh_token,
-                       client_id = google_auth$credentials$c.id,
-                       client_secret = google_auth$credentials$c.secret,
-                       grant_type = "refresh_token",
-                       style = "POST")
-  req <- curl::curl_fetch_memory("https://accounts.google.com/o/oauth2/token", handle = h)
-  a <- jsonlite::fromJSON(rawToChar(req$content))
+  h <- new_handle()
+  handle_setform(h,
+    refresh_token = google_auth$access$refresh_token,
+    client_id = google_auth$credentials$c.id,
+    client_secret = google_auth$credentials$c.secret,
+    grant_type = "refresh_token",
+    style = "POST"
+  )
+  req <- curl_fetch_memory("https://accounts.google.com/o/oauth2/token",
+    handle = h
+  )
+  a <- fromJSON(rawToChar(req$content))
   a
 }
