@@ -3,7 +3,7 @@
 #' Usually you need not to run load_token() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
 #' @param credlist list of credentials
 #' @importFrom curl new_handle handle_setform curl_fetch_memory
-#' @importFrom jsonlite fromJSON prettify
+#' @importFrom jsonlite fromJSON
 #' @return Access token with corresponding time stamp.
 load_token <- function(credlist) {
   # This function loads the access token using credentials from get_credentials(). Execution of function is only possible once.
@@ -24,7 +24,7 @@ load_token <- function(credlist) {
 
   req <- curl::curl_fetch_memory("https://accounts.google.com/o/oauth2/token", handle = h)
 
-  a <- jsonlite::fromJSON(jsonlite::prettify(rawToChar(req$content)))
+  a <- jsonlite::fromJSON(rawToChar(req$content))
 
   if (length(a) == 1) {
     print("You need to update the token - run authenticate()")
