@@ -21,16 +21,14 @@ authenticate <- function(save = T) {
 
     if (save) {
       save("google_auth", file = ".google.auth.RData")
-
       # make sure your credentials are ignored by svn and git ####
       if (!file.exists(".gitignore")) {
         cat(".google.auth.RData", file = ".gitignore", sep = "\n")
       }
       if (file.exists(".gitignore")) {
-        suppressWarnings(gitignore <- paste(readLines(".gitignore"), collapse = " "))
-        if(!grepl(".google.auth.RData", gitignore)) {
-          cat(".google.auth.RData", file = ".gitignore",
-              append = TRUE)
+        gitignore <- readLines(".gitignore")
+        if(!is.element(".google.auth.RData", gitignore)) {
+          cat(".google.auth.RData", file = ".gitignore", append = TRUE, fill = TRUE)
         }
       }
     }
