@@ -52,12 +52,6 @@ get_credentials <- function() {
   if (exists("credentials")) {
     url <- sprintf("https://accounts.google.com/o/oauth2/auth?client_id=%s&response_type=code&scope=https://www.googleapis.com/auth/adwords&redirect_uri=urn:ietf:wg:oauth:2.0:oob&access_type=offline&approval_prompt=force",
                    credentials$c.id)
-    # cert <- system.file("CurlSSL", "ca-bundle.crt", package = "RCurl")#SSL Certificate Fix for Windows
-    RCurl::getURL(url,
-      # cainfo=cert, # Explicitly setting
-      # certificate verification for an error in OS X
-      ssl.verifypeer = TRUE
-    )
     browseURL(url)
     # Manual next-step: input code-parameter
     # to c.token variable and run load_token()
@@ -71,6 +65,5 @@ get_credentials <- function() {
     )))
   }
   # return one environment that contains all the values...
-  # call it by credential_env <- get_auth()
   credentials
 }
