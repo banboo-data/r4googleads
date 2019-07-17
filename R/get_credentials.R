@@ -3,7 +3,6 @@
 #' Google authentication server using OAUTH2 and receives the client token.
 #' Usually you need not to run get_credentials() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
 #' @importFrom utils browseURL
-#' @importFrom RCurl getURL
 #' @return Client token from Google authentication server.
 get_credentials <- function() {
   # This function asks for the credentials
@@ -52,7 +51,7 @@ get_credentials <- function() {
   if (exists("credentials")) {
     url <- sprintf("https://accounts.google.com/o/oauth2/auth?client_id=%s&response_type=code&scope=https://www.googleapis.com/auth/adwords&redirect_uri=urn:ietf:wg:oauth:2.0:oob&access_type=offline&approval_prompt=force",
                    credentials$c.id)
-    browseURL(url)
+    utils::browseURL(url)
     # Manual next-step: input code-parameter
     # to c.token variable and run load_token()
     cat("Authentication process needs your Client

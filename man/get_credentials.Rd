@@ -10,7 +10,7 @@ get_credentials()
 Client token from Google authentication server.
 }
 \description{
-get_auth authenticates the R app at the
+get_credentials authenticates the R app at the
 Google authentication server using OAUTH2 and receives the client token.
-Usually you need not to run get_auth() explicitly since the whole authentication process is managed by \code{\link{do_auth}}.
+Usually you need not to run get_credentials() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
 }
