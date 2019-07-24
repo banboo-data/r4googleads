@@ -1,5 +1,7 @@
 SELECT campaign.id,
+       campaign.name,
        ad_group.id,
+       ad_group.name,
        metrics.impressions,
        metrics.clicks,
        metrics.cost_micros
