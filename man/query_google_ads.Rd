@@ -4,12 +4,9 @@
 \alias{query_google_ads}
 \title{Query Google Ads Data}
 \usage{
-query_google_ads(account_id, mcc_id, google_auth,
-  service = googleAdsSearch())
+query_google_ads(mcc_id, google_auth, service)
 }
 \arguments{
-\item{account_id}{Google Ads Account ID}
-
 \item{mcc_id}{Google Ads Client Center MCC Id}
 
 \item{google_auth}{auth object}

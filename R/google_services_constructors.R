@@ -25,6 +25,3 @@ googleAdsFields <- function(tbl){
 }
 
 
-
-xx <- googleAdsSearch("123")
-build_handle(xx)

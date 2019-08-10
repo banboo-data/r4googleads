@@ -1,6 +1,5 @@
 #' @title Query Google Ads Data
 #' @description Queries data from Google Ads API.
-#' @param account_id Google Ads Account ID
 #' @param mcc_id Google Ads Client Center MCC Id
 #' @param google_auth auth object
 #' @param query Google Ads query
@@ -8,10 +7,10 @@
 #' @importFrom jsonlite fromJSON
 #' @return Dataframe
 #' @export
-query_google_ads <- function(account_id,
-                       mcc_id,
-                       google_auth,
-                       service = googleAdsSearch()) {
+query_google_ads <- function(mcc_id,
+                             google_auth,
+                             service
+                             ) {
   if (is.function(query)) {
     query <- query()
   } else if (is.character(query)) {
