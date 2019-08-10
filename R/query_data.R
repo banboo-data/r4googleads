@@ -11,13 +11,6 @@ query_google_ads <- function(mcc_id,
                              google_auth,
                              service
                              ) {
-  if (is.function(query)) {
-    query <- query()
-  } else if (is.character(query)) {
-    query <- query
-  } else {
-    stop("Either choose a query constructor function or pass a fully customized SQL string.")
-  }
 
   access <- google_auth$access
   credlist <- google_auth$credentials
@@ -26,7 +19,7 @@ query_google_ads <- function(mcc_id,
     access <- refresh_token(google_auth)
   }
 
-  account_id <- gsub("-", "", account_id)
+
   mcc_id <- gsub("-", "", mcc_id)
   google.auth <- paste(access$token_type, access$access_token)
 
@@ -42,7 +35,7 @@ query_google_ads <- function(mcc_id,
     "login-customer-id" = mcc_id
   )
 
-  req <- curl_fetch_memory(url, handle = h)
+  req <- curl_fetch_memory(service$url, handle = h)
 
   a <- fromJSON(rawToChar(req$content))
 

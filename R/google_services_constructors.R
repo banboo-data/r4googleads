@@ -1,6 +1,8 @@
 #' constructor for Search Class
 #' @export
 googleAdsSearch <- function(aid, query = default_search()){
+  # this makes both notations works, with and w/o '-'
+  aid <- gsub("-", "", aid)
   l <- list(
     url = sprintf(
       "https://googleads.googleapis.com/v2/customers/%s/googleAds:search",
