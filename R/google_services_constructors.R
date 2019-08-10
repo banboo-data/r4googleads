@@ -4,6 +4,7 @@ googleAdsSearch <- function(aid, query = default_search()){
   # this makes both notations works, with and w/o '-'
   aid <- gsub("-", "", aid)
   l <- list(
+    service_name = "googleAdsSearch",
     url = sprintf(
       "https://googleads.googleapis.com/v2/customers/%s/googleAds:search",
       aid),
@@ -17,6 +18,7 @@ googleAdsSearch <- function(aid, query = default_search()){
 #' @export
 googleAdsFields <- function(tbl){
   l <- list(
+    service_name = "googleAdsFields",
     url = sprintf(
       "https://googleads.googleapis.com/v2/googleAdsFields/%s",
       tbl
