@@ -24,7 +24,8 @@ load_token <- function(credlist) {
   )
 
   req <- curl_fetch_memory("https://accounts.google.com/o/oauth2/token",
-                           handle = h)
+    handle = h
+  )
 
   a <- fromJSON(rawToChar(req$content))
 

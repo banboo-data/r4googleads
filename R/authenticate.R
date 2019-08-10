@@ -27,7 +27,7 @@ authenticate <- function(save = T) {
       }
       if (file.exists(".gitignore")) {
         gitignore <- readLines(".gitignore")
-        if(!is.element(".google.auth.RData", gitignore)) {
+        if (!is.element(".google.auth.RData", gitignore)) {
           cat(".google.auth.RData", file = ".gitignore", append = TRUE, fill = TRUE)
         }
       }
