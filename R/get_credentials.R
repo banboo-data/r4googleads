@@ -4,7 +4,7 @@
 #' Usually you need not to run get_credentials() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
 #' @importFrom utils browseURL
 #' @return Client token from Google authentication server.
-get_credentials <- function() {
+.get_credentials <- function() {
   # This function asks for the credentials
   # (Client Id, Client Secret) from the Api project,
   # the developer token from the Google Ads MCC and
