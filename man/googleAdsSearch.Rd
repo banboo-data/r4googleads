@@ -2,10 +2,18 @@
 % Please edit documentation in R/google_services_constructors.R
 \name{googleAdsSearch}
 \alias{googleAdsSearch}
-\title{constructor for Search Class}
+\title{Construct googleAdsSearch Class (S3)}
 \usage{
 googleAdsSearch(aid, query = default_search())
 }
+\arguments{
+\item{aid}{character Google account id}
+
+\item{query}{character query string or function that returns a character query string. See also
+\link[RGoogleAds]{queries}.}
+}
 \description{
-constructor for Search Class
+Create an instance of a googleAdsSearch class.
+A list of Google's ads services can be found here:
+\url{https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v2.services}.
 }

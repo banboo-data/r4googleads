@@ -1,12 +1,18 @@
-#' @title Query Google Ads Data
-#' @description Queries data from Google Ads API.
-#' @param mcc_id Google Ads Client Center MCC Manager Id
+#' Query Google Ads Data
+#'
+#' Sends Google Ads Services objects to the Google Ads API.
+#'
+#'
+#' @param mcc_id Google Ads Client Center MCC Id
 #' @param google_auth auth object
-#' @param service Google Ads API Service Object
+#' @param service googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.
 #' @param raw_data T/F returns raw data or content only
+#'
+#' @return Google Services return object either with raw or processed data (default).
+#'
 #' @importFrom curl new_handle handle_setheaders handle_setopt curl_fetch_memory
 #' @importFrom jsonlite fromJSON
-#' @return Dataframe
+#'
 #' @export
 query_google_ads <- function(mcc_id,
                              google_auth,
@@ -18,7 +24,7 @@ query_google_ads <- function(mcc_id,
   credlist <- google_auth$credentials
 
   if (as.numeric(Sys.time()) - 3600 >= access$timeStamp) {
-    access <- refresh_token(google_auth)
+    access <- .refresh_token(google_auth)
   }
 
 
