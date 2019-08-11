@@ -7,12 +7,12 @@
 authenticate(save = T)
 }
 \arguments{
-\item{save}{logical denotes whether authentication information should be saved on disk. Defaults to TRUE.}
+\item{save}{logical, should the authentication information should be saved on disk? Defaults to TRUE.}
 }
 \value{
-Dataframe with the credential information which is cached in working space
+data.frame containing credentials, optionally saved as .RData in the current working directory
 }
 \description{
-This function starts the authentication process with Google.
-Note that this function needs user interaction.
+This function starts the authentication process with
+Google. Note that this function needs user interaction.
 }

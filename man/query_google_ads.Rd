@@ -11,11 +11,11 @@ query_google_ads(mcc_id, google_auth, service)
 
 \item{google_auth}{auth object}
 
-\item{query}{Google Ads query}
+\item{service}{googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.}
 }
 \value{
-Dataframe
+Google Services return object either with raw or processed data (default).
 }
 \description{
-Queries data from Google Ads API.
+Sends Google Ads Services objects to the Google Ads API.
 }

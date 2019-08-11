@@ -15,7 +15,7 @@ authenticate <- function(save = T) {
     load(".google.auth.RData")
   } else {
     credentials <- .get_credentials()
-    access_token <- load_token(credentials)
+    access_token <- .load_token(credentials)
     # credentials can be saved in workspace
     # for use with cron jobs etc
     google_auth <- list()
