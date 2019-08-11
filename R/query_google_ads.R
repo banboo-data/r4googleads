@@ -6,6 +6,7 @@
 #' @param mcc_id Google Ads Client Center MCC Id
 #' @param google_auth auth object
 #' @param service googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.
+#' @param raw_data T/F returns raw data or content only
 #'
 #' @return Google Services return object either with raw or processed data (default).
 #'
@@ -15,7 +16,8 @@
 #' @export
 query_google_ads <- function(mcc_id,
                              google_auth,
-                             service
+                             service,
+                             raw_data = F
                              ) {
 
   access <- google_auth$access
@@ -42,13 +44,7 @@ query_google_ads <- function(mcc_id,
   )
 
   req <- curl_fetch_memory(service$url, handle = h)
+  class(req) <- append(class(req), paste0(service$service_name, "Result"))
 
-  a <- fromJSON(rawToChar(req$content))
-
-  if (req$status_code == "200") {
-    a$results
-  } else {
-    cat("an error occured.")
-    a
-  }
+  extract_data(req, raw_data)
 }
