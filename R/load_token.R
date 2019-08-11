@@ -1,6 +1,8 @@
-#' @title Loading the Access Token
-#' @description load_token loads the access token using credentials provided by \code{\link{get_credentials}}. Execution of function is possible only once per authentication process.
+#' Loading the Access Token
+#'
+#' load_token loads the access token using credentials provided by another internal function (dot-get_credentials). Execution of function is possible only once per authentication process.
 #' Usually you need not to run load_token() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
+#'
 #' @param credlist list of credentials
 #' @importFrom curl new_handle handle_setform curl_fetch_memory
 #' @importFrom jsonlite fromJSON

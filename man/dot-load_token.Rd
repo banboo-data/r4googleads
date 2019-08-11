@@ -13,6 +13,6 @@
 Access token with corresponding time stamp.
 }
 \description{
-load_token loads the access token using credentials provided by \code{\link{get_credentials}}. Execution of function is possible only once per authentication process.
+load_token loads the access token using credentials provided by another internal function (dot-get_credentials). Execution of function is possible only once per authentication process.
 Usually you need not to run load_token() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
 }
