@@ -1,2 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+RGoogleAds.Rproj
+.google.auth.RData
+inst/sandbox.R
