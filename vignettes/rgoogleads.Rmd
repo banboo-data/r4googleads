@@ -1,0 +1,51 @@
+---
+title: "RGoogleAds: R interface for the Google Ads API"
+author: "Johannes Burkhardt, Matthias Bannert"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    fig_caption: false
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 3
+vignette: >
+  %\VignetteIndexEntry{RGoogleAds: R interface for the Google Ads API}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+### Introduction
+
+#### RGoogleAds User Manual
+
+Welcome to the official documentation of the **RGoogleAds** package for **Google Ads**. RGoogleAds enables users of the R Language for Statistical Computing to directly access their Google Ads account in order to consume and analyze information provided by the Google Ads API.
+
+#### General
+
+RGoogleAds is a license cost free open source project by [@jburkhardt](https://github.com/jburkhardt) and [@mbannert](https://github.com/mbannert). Our package implements three main features:
+
+First, the package provides OAUTH2 authentication for R with an user's Google Ads account.
+
+Second, the package offers an R interface to apply the Adwords Query Language from within R. The Adwords API can be used to obtain adhoc reports.
+
+Third, the received data is transformed to standard R data objects that can be easily analyzed from within R or export to standard file formats.
+
+
+### installation
+### requirements
+### workflow
+### authentication
+### data reporting
+### code examples
+### FAQ / troubleshooting
+### bug reporting
