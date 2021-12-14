@@ -7,16 +7,17 @@
 #' @param aid character Google account id
 #' @param query character query string or function that returns a character query string. See also
 #' \link[RGoogleAds]{queries}.
-#'
+#' @param api_version Google Ads API version e.g 'v9'
 #'
 #' @export
-googleAdsSearch <- function(aid, query = default_search()){
+googleAdsSearch <- function(aid, query = default_search(), api_version = 'v9'){
   # this makes both notations works, with and w/o '-'
   aid <- gsub("-", "", aid)
   l <- list(
     service_name = "googleAdsSearch",
     url = sprintf(
-      "https://googleads.googleapis.com/v9/customers/%s/googleAds:searchStream",
+      "https://googleads.googleapis.com/%s/customers/%s/googleAds:searchStream",
+      api_version,
       aid),
     query = query
   )
@@ -32,13 +33,15 @@ googleAdsSearch <- function(aid, query = default_search()){
 #' \url{https://developers.google.com/google-ads/api/rest/reference/rest/v9/googleAdsFields}.
 #'
 #' @param tbl character table argument
+#' @param api_version Google Ads API version e.g 'v9'
 #'
 #' @export
-googleAdsFields <- function(tbl){
+googleAdsFields <- function(tbl, api_version = 'v9'){
   l <- list(
     service_name = "googleAdsFields",
     url = sprintf(
-      "https://googleads.googleapis.com/v9/googleAdsFields/%s",
+      "https://googleads.googleapis.com/%s/googleAdsFields/%s",
+      api_version,
       tbl
     )
   )
@@ -50,12 +53,16 @@ googleAdsFields <- function(tbl){
 #'
 #' Create an instance of a listAccessibleCustomers class.
 #' \url{https://developers.google.com/google-ads/api/rest/reference/rest/v9/customers/listAccessibleCustomers}.
+#' @param api_version Google Ads API version e.g 'v9'
 #'
 #' @export
-listAccessibleCustomers <- function(){
+listAccessibleCustomers <- function(api_version = 'v9'){
   l <- list(
     service_name = "listAccessibleCustomers",
-    url = "https://googleads.googleapis.com/v9/customers:listAccessibleCustomers"
+    url = sprintf(
+      "https://googleads.googleapis.com/%s/customers:listAccessibleCustomers",
+      api_version
+    )
   )
   attr(l, "class") <- "listAccessibleCustomers"
   l
