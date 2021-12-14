@@ -16,7 +16,7 @@ googleAdsSearch <- function(aid, query = default_search()){
   l <- list(
     service_name = "googleAdsSearch",
     url = sprintf(
-      "https://googleads.googleapis.com/v9/customers/%s/googleAds:search",
+      "https://googleads.googleapis.com/v9/customers/%s/googleAds:searchStream",
       aid),
     query = query
   )
@@ -29,7 +29,7 @@ googleAdsSearch <- function(aid, query = default_search()){
 #'
 #' Create an instance of a googleAdsFields class.
 #' A list of Google's ads services and their arguments can be found here:
-#' \url{https://developers.google.com/google-ads/api/rest/reference/rest}.
+#' \url{https://developers.google.com/google-ads/api/rest/reference/rest/v9/googleAdsFields}.
 #'
 #' @param tbl character table argument
 #'
@@ -46,4 +46,17 @@ googleAdsFields <- function(tbl){
   l
 }
 
-
+#' Construct listAccessibleCustomers Class (S3)
+#'
+#' Create an instance of a listAccessibleCustomers class.
+#' \url{https://developers.google.com/google-ads/api/rest/reference/rest/v9/customers/listAccessibleCustomers}.
+#'
+#' @export
+listAccessibleCustomers <- function(){
+  l <- list(
+    service_name = "listAccessibleCustomers",
+    url = "https://googleads.googleapis.com/v9/customers:listAccessibleCustomers"
+  )
+  attr(l, "class") <- "listAccessibleCustomers"
+  l
+}

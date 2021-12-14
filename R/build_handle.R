@@ -22,3 +22,9 @@ build_handle.googleAdsSearch <- function(x){
 build_handle.googleAdsFields <- function(x){
   new_handle()
 }
+
+# Build Handle Method for the listAccessibleCustomers class
+# see also google_services_constructors.R
+build_handle.listAccessibleCustomers <- function(x){
+  new_handle()
+}
