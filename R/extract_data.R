@@ -25,3 +25,12 @@ extract_data.googleAdsFieldsResult <- function(x, raw_data){
   a
 
 }
+
+
+extract_data.listAccessibleCustomersResult <- function(x, raw_data){
+
+  if(raw_data) return(x)
+  a <- fromJSON(rawToChar(x$content))
+  a
+
+}
