@@ -2,7 +2,7 @@
 #'
 #' Create an instance of a googleAdsSearch class.
 #' A list of Google's ads services can be found here:
-#' \url{https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v2.services}.
+#' \url{https://developers.google.com/google-ads/api/rest/reference/rest}.
 #'
 #' @param aid character Google account id
 #' @param query character query string or function that returns a character query string. See also
@@ -16,7 +16,7 @@ googleAdsSearch <- function(aid, query = default_search()){
   l <- list(
     service_name = "googleAdsSearch",
     url = sprintf(
-      "https://googleads.googleapis.com/v2/customers/%s/googleAds:search",
+      "https://googleads.googleapis.com/v9/customers/%s/googleAds:search",
       aid),
     query = query
   )
@@ -29,7 +29,7 @@ googleAdsSearch <- function(aid, query = default_search()){
 #'
 #' Create an instance of a googleAdsFields class.
 #' A list of Google's ads services and their arguments can be found here:
-#' \url{https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v2.services}.
+#' \url{https://developers.google.com/google-ads/api/rest/reference/rest}.
 #'
 #' @param tbl character table argument
 #'
@@ -38,7 +38,7 @@ googleAdsFields <- function(tbl){
   l <- list(
     service_name = "googleAdsFields",
     url = sprintf(
-      "https://googleads.googleapis.com/v2/googleAdsFields/%s",
+      "https://googleads.googleapis.com/v9/googleAdsFields/%s",
       tbl
     )
   )

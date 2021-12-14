@@ -3,7 +3,7 @@
 # few cases where to code speaks for itself.
 # definitely no further documentation needed.
 # If you feel otherwise, drop us an issue
-# on github: https://github.com/rstats-lab/RGoogleAds/issues.
+# on github: https://github.com/banboo-data/RGoogleAds/issues.
 print.googleAdsSearch <- function(x){
   cat(x$query)
 }
