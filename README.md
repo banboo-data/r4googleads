@@ -46,22 +46,27 @@ install_github('banboo-data/RGoogleAds')
 
 ```R
 library(RGoogleAds)
-google_ads_auth <- authenticate()
+google_auth <- authenticate()
 ```
 
 ### Load Data
 
 ```R
-sql_query = "SELECT campaign.name, campaign.status,
-             segments.device, metrics.impressions,
-             metrics.clicks, metrics.ctr,
-             metrics.average_cpc, metrics.cost_micros
-             FROM campaign
-             WHERE segments.date DURING LAST_30_DAYS
-             AND metrics.impressions > 0
-             PARAMETERS include_drafts=true"
+sql_query <- "SELECT
+                campaign.name, 
+                campaign.status,
+                segments.device, 
+                metrics.impressions,
+                metrics.clicks, 
+                metrics.ctr,
+                metrics.average_cpc, 
+                metrics.cost_micros
+              FROM campaign
+              WHERE segments.date DURING LAST_30_DAYS
+              AND metrics.impressions > 0
+              PARAMETERS include_drafts=true"
 
-query_service = googleAdsSearch(
+query_service <- googleAdsSearch(
   aid = '***-****-***', # Google Ads Account ID
   query = sql_query,
   api_version = 'v9'
@@ -69,7 +74,7 @@ query_service = googleAdsSearch(
 
 data <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
-  google_auth = google_ads_auth,
+  google_auth = google_auth,
   service = query_service,
   raw_data = F
 )
@@ -89,7 +94,7 @@ report_schema = googleAdsFields(
 
 campaign_report_schema <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
-  google_auth = google_ads_auth,
+  google_auth = google_auth,
   service = report_schema,
   raw_data = F
 )
@@ -102,7 +107,7 @@ list_customer_service <- listAccessibleCustomers(api_version = 'v9')
 
 customers <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
-  google_auth = google_ads_auth,
+  google_auth = google_auth,
   service = list_customer_service,
   raw_data = F
 )
@@ -111,16 +116,3 @@ customers <- query_google_ads(
 ## Contribution and Package Extension
 
 **RGoogleAds** makes use of the [REST interface](https://developers.google.com/google-ads/api/rest/overview) of the Google Ads API. For each REST resource / service of the Google Ads API we construct a S3 Class in `R/google_services_construtors.R`. This modular approach enables the extension of **RGoogleAds** service by service.
-
-## Bug Reporting
-
-Please make sure you run with the latest **RGoogleAds** version before you report any issues. If you are still in trouble, please report the issue on Github: [https://github.com/banboo-data/RGoogleAds/issues](https://github.com/banboo-data/RGoogleAds/issues)
-
-We appreciate if you provide the following information along with the issue:
-
-* Operating System
-* R Version
-* RGoogleAds version
-* the R code which leads to the error
-* the error message, prompt output
-* code as text rather than screenshots
