@@ -1,4 +1,4 @@
-Package: RGoogleAds
+Package: r4googleads
 Type: Package
 Title: Google Ads API Interface
 Version: 0.1
@@ -13,6 +13,8 @@ Imports:
     curl,
     jsonlite,
 Suggests: 
+    rmarkdown,
+    knitr,
     testthat
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -20,3 +22,4 @@ LazyData: true
 URL: https://github.com/rstats-lab/RGoogleAds
 BugReports: https://github.com/rstats-lab/RGoogleAds/issues
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr

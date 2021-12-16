@@ -3,3 +3,6 @@
 RGoogleAds.Rproj
 .google.auth.RData
 inst/sandbox.R
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
