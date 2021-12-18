@@ -2,8 +2,12 @@ Package: r4googleads
 Type: Package
 Title: Google Ads API Interface
 Version: 0.1
-Author: Johannes Burkhardt [aut,cre], Matthias Bannert [aut]
-Maintainer: Johannes Burkhardt <johannes.burkhardt@gmail.com>
+Authors@R: c(
+    person("Johannes", "Burkhardt", ,"johannes.burkhardt@gmail.com", role = c("aut","cre")
+    ),
+    person("Matthias", "Bannert", ,"bunny@hey.com", role = c("aut")
+    )
+    )
 Description: Interface for the Google Ads API. Google Ads is an online
     advertising service that enables advertisers to display advertising to web
     users (see <https://developers.google.com/google-ads/> for more information).
