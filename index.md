@@ -15,15 +15,13 @@ The Ads API is Google's modern application programming interface (API) to its Ad
 
 ## Developed by the Creators of RAdwords
 
-{**r4googleads**} is the leading R client library for the Google Ads API developed by [Matthias Bannert](https://github.com/mbannert) and [Johannes Burkhardt](https://github.com/jburkhardt). Since 2014, the duo has developed and maintained **RAdwords**, the #1 R client library for Google's predecessor Adwords API. That's *7* years of experience and reliable maintenance of an open source package. 
+{**r4googleads**} is the leading R client library for the Google Ads API developed by [Matthias Bannert](https://github.com/mbannert) and [Johannes Burkhardt](https://github.com/jburkhardt). Since 2014, the duo has developed and maintained **RAdwords**, the #1 R client library for Google's predecessor Adwords API. That's 66K+ downloads and, more importantly, *7* years of experience and reliable maintenance of an open source package. 
 
-Let's move on the all new {**r4googleads**} ! (check our migration guide!)
+Let's move on to the all new {**r4googleads**} ! (check our migration guide!)
 
 ## Why {**r4googleads**} ? 
 
-**Connect** your Google Ads reports to the R Language for Statistical Computing. Unlock the next level of campaing and marketing performance analytics -> Learn how to **analyze** Google Ads statistics and Key Performance Indicators (KPIs) using a license costs freeeee open source programming language. **Automate** your reports on accounts, campaigns, adgroups and keywords data reliably.
-
-Benefit from 
+**Connect** your Google Ads reports to the R Language for Statistical Computing. Unlock the next level of campaign and marketing performance analytics -> Learn how to **analyze** Google Ads statistics and Key Performance Indicators (KPIs) using a license cost freeeee open source programming language. **Automate** your reports on accounts, campaigns, adgroups and keywords data reliably.
 
 * authenticate with the Google Ads API
 * light dependencies on other R packages for stable long term production 
@@ -35,7 +33,13 @@ Benefit from
 ## What Does {**r4googleads**} Not Do? 
 
 - the package does not sign you up @Google (you need an existing acocunt) 
-- the package does not implement statistical methods. (the R language is second to none when it comes the amount of methodological extension packages though) 
+- the package does not implement statistical methods. (the R language is second to none when it comes the amount of methodological extension packages. Pick your methods for statistical analysis from more than 18K extension packages. ) 
+
+<!-- 
+Add some link to our paid info content here (help with choice of methods statistical analysis)
+
+
+-->
 
 
 ## Quick Start Guide

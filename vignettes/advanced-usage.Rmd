@@ -1,0 +1,59 @@
+---
+title: "advanced-usage"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{advanced-usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(r4googleads)
+```
+
+
+Let's put some details about our S3 method dispatch here. Also add a contribution guide.
+
+### Explore Report Data Schema
+
+```R
+report_schema = googleAdsFields(
+  tbl = "campaign", # e.g. campaign report
+  api_version = 'v9'
+  )
+
+campaign_report_schema <- query_google_ads(
+  mcc_id = '***-***-****', # Google Ads My Client Center ID
+  google_auth = google_auth,
+  service = report_schema,
+  raw_data = F
+)
+```
+
+#### List Customers / Accounts
+
+```R
+list_customer_service <- listAccessibleCustomers(api_version = 'v9')
+
+customers <- query_google_ads(
+  mcc_id = '***-***-****', # Google Ads My Client Center ID
+  google_auth = google_auth,
+  service = list_customer_service,
+  raw_data = F
+)
+```
+
+## Contribution and Package Extension
+
+{**r4googleads**} makes use of the [REST interface](https://developers.google.com/google-ads/api/rest/overview) of the Google Ads API. For each REST resource / service of the Google Ads API we construct a S3 Class in `R/google_services_construtors.R`. This modular approach enables the extension of {**r4googleads**} service by service.
+
+
+
+
