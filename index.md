@@ -144,8 +144,6 @@ data <- query_google_ads(
 ```
 
 
-Display the data object right here. For more advanced usage such as Report Schemas, Listing Customer of Contributing to the package, please 
-refer to the developer guide.... 
 
 
 

@@ -24,6 +24,8 @@ library(r4googleads)
 
 ### Authentication
 
+In order to run queries, you will need a Client ID, a Client Secret, a developer token and a client token from Google. Our *authenticate()* functions walks you through Google's OAUTH process and stores the client token to a hidden .RData file. Subsequent queries will use the client token if the hidden *.google.auth.RData* file exists. Otherwise *authenticate()* invoke the dialog with Google. 
+
 
 ### Object Orientation (OO) - Add New Google Services with Ease! 
 
@@ -37,11 +39,11 @@ S3 Object Orientation is an R specific implementation of object orientation (OO)
 
 In case you want to contribute to {r4googleads}, you're more than welcome to do so.
 Please make sure you understand the implications of publishing under an MIT License
-and make sure fine with publishing under the license we use. 
+and make sure you are fine with publishing under the license we use. 
 
 #### Fork & Feature Branch Based Collaboration
 
-Even as the core team of {r4googleads} we develop new features be creating a new git branch first. For example when working on this documentation, we create a documentation specific branch that will be merged into our main branch after review once we're done working on it. This allows other contributors to work on other features with as little interference as possible. Also, in case a specific feature or developer has a longer development cycle than others, they can simply merge the main branch that might have new features in the meantime, to their feature branch from time to time. 
+Even as the core team of {r4googleads} we develop new features by creating a new git branch first. For example when working on this documentation, we created a documentation specific branch and merged it into our main branch after review once we were done working. This allows other contributors to work on other features with as little interference as possible. Also, in case a specific feature or developer has a longer development cycle than others, they can simply merge the main branch that might have gotten new features in the meantime, to their feature branch from time to time. 
 
 If you do not have direct access to the original {r4googleads} repository, simply fork the repository to your own GitHub account and work on your feature. Once you're done and have tested your new feature thoroughly issue a *pull request* (aka merge request) to merge your new feature into {r4googleads} **dev branch**. Please be patient with the acceptance into the main branch as this branch will be deployed to CRAN. Hence we want to take extra care and review thoroughly before introducing potential breaking changes. 
 
