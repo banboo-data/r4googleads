@@ -1,5 +1,5 @@
-r4googleads -<br> Load Google Ads Data Into Your R Session
-==========================================================
+Load Google Ads Data Into Your R Session
+========================================
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/r4googleads)](https://CRAN.R-project.org/package=r4googleads)
@@ -7,11 +7,10 @@ r4googleads -<br> Load Google Ads Data Into Your R Session
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
-
 Welcome to the official documentation of the R {**r4googleads**} software package!
 {**r4googleads**} enables users of the R Project for Statistical Computing to smoothly access their Google Ads account to load and analyze information provided by the Google Ads API.
 
-The Ads API is Google's modern application programming interface (API) to its Ads platform and the next generation of the AdWords API. The Ads API enables Google Ads customers to interact with Google's advertising platform using a programming language. Implement your advertising performance analytics in R and increase your efficiency, make your reports reproducible and flexible enough to managing even large, complex Google Ads accounts and campaigns.
+The Ads API is Google's latest application programming interface (API) to its Ads platform and the next generation of the AdWords API. The Ads API enables Google Ads customers to interact with Google's advertising platform using a programming language. {r4googleads} helps you to implement your advertising performance analytics in R and increase your efficiency, make your reports reproducible and flexible enough to managing even large, complex Google Ads accounts and campaigns.
 
 ## Developed by the Creators of RAdwords
 

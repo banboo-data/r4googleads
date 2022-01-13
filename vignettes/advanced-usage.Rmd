@@ -1,5 +1,5 @@
 ---
-title: "advanced-usage"
+title: "Usage Examples"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{advanced-usage}

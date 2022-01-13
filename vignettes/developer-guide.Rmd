@@ -20,14 +20,51 @@ library(r4googleads)
 
 ## Developer Guide
 
-{**r4googleads**} was designed with forking, tweaking and community contribution in mind.  The package covers basically three functionalities: **authentication**, **sending queries to Google** and **loading and processing data**.  This guide intends to facilitate tailored use of the package and pull request based contributions. 
-
-Hence we explain the basic architecture of the {**r4googleads**} package in this document. 
+{**r4googleads**} was designed with forking, tweaking and community contribution in mind. Hence this guide should support users to understand its architecture, adapt {r4googleads} to their needs, extend the package and eventually contribute. We basically cover three aspects in this guide: **authentication**, **the S3 Object Orientation Approach** and **contribution** through pull requests **from feature based branches**. 
 
 ### Authentication
 
-### OO
 
-### more 
+### Object Orientation (OO) - Add New Google Services with Ease! 
+
+S3 Object Orientation is an R specific implementation of object orientation (OO). S3 is far less strict of a concept than it is in most other languages, but it is a reasonable, light weight choice for {r4googleads} as we use object orientation only to dispatch methods. 
+
+{r4googleads} uses three S3 classes to represent Google Services in R: *googleAdsSearch*, *googleAdsFields* and *listAccessibleCustomers*. Objects of one of these classes can be passed on to one single query function , i.e., *query_google_ads()*. Internally, this function uses the S3 generic *build_handle* and its class specific methods to build query specific *curl* handles implementing a light form of polymorphism avoiding a potentially thick forrest of if-clauses. This implementation keeps the code transparent and easy to read in an effort to facilitate adding more Google Services in the future. 
+
+
+
+### Contribute
+
+In case you want to contribute to {r4googleads}, you're more than welcome to do so.
+Please make sure you understand the implications of publishing under an MIT License
+and make sure fine with publishing under the license we use. 
+
+#### Fork & Feature Branch Based Collaboration
+
+Even as the core team of {r4googleads} we develop new features be creating a new git branch first. For example when working on this documentation, we create a documentation specific branch that will be merged into our main branch after review once we're done working on it. This allows other contributors to work on other features with as little interference as possible. Also, in case a specific feature or developer has a longer development cycle than others, they can simply merge the main branch that might have new features in the meantime, to their feature branch from time to time. 
+
+If you do not have direct access to the original {r4googleads} repository, simply fork the repository to your own GitHub account and work on your feature. Once you're done and have tested your new feature thoroughly issue a *pull request* (aka merge request) to merge your new feature into {r4googleads} **dev branch**. Please be patient with the acceptance into the main branch as this branch will be deployed to CRAN. Hence we want to take extra care and review thoroughly before introducing potential breaking changes. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

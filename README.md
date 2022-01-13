@@ -7,22 +7,23 @@
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
-Welcome to the source code repository of the {**r4googleads**} package. If you came for the user documentation and howto, please visit 
-{**r4googleads**}' our *pkgdown* [documentation site](https://banboo-data.github.io/r4googleads). 
+Welcome to the source code repository of the {**r4googleads**} package. {r4googleads} helps you to implement your advertising performance analytics in R and increase your efficiency, make your reports reproducible and flexible enough to managing even large, complex Google Ads accounts and campaigns.
 
-The {**r4googleads**} package allows to conveniently load data from *Google Ads* into an **R** environment. The package uses Google Ads' application programming interface (API) which suceeds Google's *Adwords API* and consequently, {**r4googleads**} suceeds its popular predecessor API wrapper R package {**RAdwords**}.
+If you came for the user documentation and howto, please visit {**r4googleads**}' our *pkgdown* [documentation site](https://banboo-data.github.io/r4googleads). 
+
+The {**r4googleads**} package uses Google Ads' application programming interface to conveniently load data from *Google Ads* into an **R** environment. The Google Ads API suceeds Google's *Adwords API* and consequently, {**r4googleads**} suceeds its popular predecessor R package {**RAdwords**}.
 
 
 ## Installation
 
-Install the latest stable version of {**r4googleads**} from R's official Comprehensive R Archive Network (CRAN) or 
+To install the latest stable version of {**r4googleads**} from R's official Comprehensive R Archive Network (CRAN) run
 
 ```r{eval=FALSE,message=FALSE, warning=FALSE}
 install.packages("r4googleads")
 ```
 
-install the latest development release from GitHub using the [{remotes}](https://cran.r-project.org/web/packages/remotes/index.html) R package. 
-(the below example code assumes the {remotes} package is installed.)
+or install the latest development release from GitHub using the [{remotes}](https://cran.r-project.org/web/packages/remotes/index.html) R package. 
+(the below example code assumes the {remotes} package has been installed previously.)
 
 ```R
 remotes::install_github("banboo-data/r4googleads")
@@ -34,7 +35,7 @@ remotes::install_github("banboo-data/r4googleads")
 library(r4googleads)
 ```
 
-To specify which data  you want to load into your R session you can use Google's own [SQL reminiscant query language](https://developers.google.com/google-ads/api/fields/v9/overview_query_builder). Visit the link to find out about available reports and validate your queries online.
+To specify which data you want to load into your R session you can use Google's own [SQL reminiscant query language](https://developers.google.com/google-ads/api/fields/v9/overview_query_builder). The above link helps you to find out about available reports and to validate your queries online.
 
 ```R
 g_query <- "SELECT
@@ -52,8 +53,7 @@ g_query <- "SELECT
               PARAMETERS include_drafts=true"
 ```
 
-The next step is to create a *service object* that contains the query string, your Google Ads Account ID and the API version
-you want to use. The example uses one of our 3 constructors to create different service objects: *googleAdsSearch*, *googleAdsFields*,
+The next step is to create a *service object* that contains the query string, your Google Ads Account ID and the API version you want to use. The example goes on to use one of our 3 constructors to create different service objects: *googleAdsSearch*, *googleAdsFields*,
 *listAccessibleCustomers*. 
 
 ```R
@@ -64,8 +64,7 @@ query_service <- googleAdsSearch(
   )
 ```
 
-the resulting service query object can be passed on to the *query_google_ads* functions which sends the service object to Google's actual 
-API service. Note, that a *MCC* ID is needed here. The handler inside *query_google_ads* processes the service object depending on its class and starts the corresponding request. 
+the resulting service query object can be passed on to the *query_google_ads* functions which sends the service object to Google's actual API service. Note, that a *MCC* ID is needed here. The handler inside *query_google_ads* processes the service object depending on its class and starts the corresponding request. 
 
 ```R
 data <- query_google_ads(
@@ -75,3 +74,5 @@ data <- query_google_ads(
   raw_data = F
 )
 ```
+
+To learn more about creating and using our service objects visit the {r4googleads} [pkgdown documentation site](https://banboo-data.github.io/r4googleads). 

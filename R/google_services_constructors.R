@@ -6,7 +6,7 @@
 #'
 #' @param aid character Google account id
 #' @param query character query string or function that returns a character query string. See also
-#' \link[RGoogleAds]{queries}.
+#' \link[r4googleads]{queries}.
 #' @param api_version Google Ads API version e.g 'v9'
 #'
 #' @export

@@ -1,0 +1,19 @@
+---
+title: "RAdwords Migration Guide"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{radwords-migration-guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(r4googleads)
+```

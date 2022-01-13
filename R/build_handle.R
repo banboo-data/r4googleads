@@ -2,6 +2,14 @@
 # When extending the package to further services
 # new service specific methods need to be added here.
 # modifies the curl handle object
+
+#' Prepare Curl Request
+#' 
+#' Create  
+
+#' @param x object of class googleAdsSearch, googleAdsFields
+#' listAccessibleCustomers
+#' @export 
 build_handle <- function (x) {
   UseMethod("build_handle", x)
 }

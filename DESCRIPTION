@@ -23,7 +23,7 @@ Suggests:
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/rstats-lab/RGoogleAds
-BugReports: https://github.com/rstats-lab/RGoogleAds/issues
+URL: https://github.com/banboo-data/r4googleads
+BugReports: https://github.com/banboo-data/r4googleads/issues
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
