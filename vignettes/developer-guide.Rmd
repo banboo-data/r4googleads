@@ -34,8 +34,10 @@ S3 Object Orientation is an R specific implementation of object orientation (OO)
 {r4googleads} uses three S3 classes to represent Google Services in R: *googleAdsSearch*, *googleAdsFields* and *listAccessibleCustomers*. Objects of one of these classes can be passed on to one single query function , i.e., *query_google_ads()*. Internally, this function uses the S3 generic *build_handle* and its class specific methods to build query specific *curl* handles implementing a light form of polymorphism avoiding a potentially thick forrest of if-clauses. This implementation keeps the code transparent and easy to read in an effort to facilitate adding more Google Services in the future. 
 
 
+{**r4googleads**} makes use of the [REST interface](https://developers.google.com/google-ads/api/rest/overview) of the Google Ads API. For each REST resource / service of the Google Ads API we construct a S3 Class in `R/google_services_construtors.R`. This modular approach enables the extension of {**r4googleads**} service by service.
 
-### Contribute
+
+### Contribution and Package Extension
 
 In case you want to contribute to {r4googleads}, you're more than welcome to do so.
 Please make sure you understand the implications of publishing under an MIT License
@@ -46,6 +48,9 @@ and make sure you are fine with publishing under the license we use.
 Even as the core team of {r4googleads} we develop new features by creating a new git branch first. For example when working on this documentation, we created a documentation specific branch and merged it into our main branch after review once we were done working. This allows other contributors to work on other features with as little interference as possible. Also, in case a specific feature or developer has a longer development cycle than others, they can simply merge the main branch that might have gotten new features in the meantime, to their feature branch from time to time. 
 
 If you do not have direct access to the original {r4googleads} repository, simply fork the repository to your own GitHub account and work on your feature. Once you're done and have tested your new feature thoroughly issue a *pull request* (aka merge request) to merge your new feature into {r4googleads} **dev branch**. Please be patient with the acceptance into the main branch as this branch will be deployed to CRAN. Hence we want to take extra care and review thoroughly before introducing potential breaking changes. 
+
+
+
 
 
 

@@ -14,20 +14,33 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, eval=FALSE}
 library(r4googleads)
+google_auth <- authenticate()
 ```
 
+## Examples
 
-Let's put some details about our S3 method dispatch here. Also add a contribution guide.
+In addition to Google queries {r4googleads} comes with built-in support 
+for GoogleAds services and listing accessible customers. Please notice that all examples assume that you have a working GoogleAds setup (MCC, Client ID, Client Secret, Developer Token and client token) and that you're authenticated successfully using {r4googleads}.
+
 
 ### Explore Report Data Schema
+
+First create the corresponding R object of class *GoogleAdsFields* and set its 
+parameters that will be send to Google. 
 
 ```R
 report_schema = googleAdsFields(
   tbl = "campaign", # e.g. campaign report
   api_version = 'v9'
   )
+
+```
+
+Pass the newly created object to the standard *query_google_ads* function
+
+```r
 
 campaign_report_schema <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
@@ -37,7 +50,31 @@ campaign_report_schema <- query_google_ads(
 )
 ```
 
-#### List Customers / Accounts
+and received the desired answer based on the parameters and class of the object. 
+
+```r
+> str(campaign_report_schema)
+List of 13
+ $ resourceName      : chr "googleAdsFields/campaign"
+ $ category          : chr "RESOURCE"
+ $ dataType          : chr "MESSAGE"
+ $ name              : chr "campaign"
+ $ selectable        : logi FALSE
+ $ filterable        : logi FALSE
+ $ sortable          : logi FALSE
+ $ selectableWith    : chr [1:194] "accessible_bidding_strategy" "bidding_strategy" "campaign_budget" "customer" ...
+ $ attributeResources: chr [1:4] "accessible_bidding_strategy" "bidding_strategy" "campaign_budget" "customer"
+ $ metrics           : chr [1:84] "metrics.absolute_top_impression_percentage" "metrics.active_view_cpm" "metrics.active_view_ctr" "metrics.active_view_impressions" ...
+ $ segments          : chr [1:24] "segments.ad_destination_type" "segments.ad_network_type" "segments.click_type" "segments.conversion_action" ...
+ $ typeUrl           : chr "com.google.ads.googleads.v9.resources.Campaign"
+ $ isRepeated        : logi FALSE
+
+```
+
+
+### List Customers / Accounts
+
+Listing available accounts works in similar fashion. 
 
 ```R
 list_customer_service <- listAccessibleCustomers(api_version = 'v9')
@@ -50,9 +87,16 @@ customers <- query_google_ads(
 )
 ```
 
-## Contribution and Package Extension
+... customers a simple list of resources.
 
-{**r4googleads**} makes use of the [REST interface](https://developers.google.com/google-ads/api/rest/overview) of the Google Ads API. For each REST resource / service of the Google Ads API we construct a S3 Class in `R/google_services_construtors.R`. This modular approach enables the extension of {**r4googleads**} service by service.
+
+```r
+> customers
+$resourceNames
+[1] "customers/8880XXXXX"
+
+```
+
 
 
 
