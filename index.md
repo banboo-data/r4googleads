@@ -126,7 +126,7 @@ you want to use. The example uses one of our 3 constructors to create different 
 ```R
 query_service <- googleAdsSearch(
   aid = '***-****-***', # Google Ads Account ID
-  query = sql_query,
+  query = g_query,
   api_version = 'v9'
   )
 ```
@@ -135,13 +135,153 @@ the resulting service query object can be passed on to the *query_google_ads* fu
 API service. Note, that a *MCC* ID is needed here. The handler inside *query_google_ads* processes the service object depending on its class and starts the corresponding request. 
 
 ```R
-data <- query_google_ads(
+d <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
   google_auth = google_auth,
   service = query_service,
   raw_data = F
 )
 ```
+
+The object d is a list that contains a nested data.frame: a *campaign* data.frame, 
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> resourceName </th>
+   <th style="text-align:left;"> status </th>
+   <th style="text-align:left;"> name </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> customers/5601631765/campaigns/354500548 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> Brands </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> customers/5601631765/campaigns/14704583758 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> google_shopping_de </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> customers/5601631765/campaigns/354500548 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> Brands </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> customers/5601631765/campaigns/14704583758 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> google_shopping_de </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> customers/5601631765/campaigns/354500548 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> Brands </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> customers/5601631765/campaigns/14704583758 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> google_shopping_de </td>
+  </tr>
+</tbody>
+</table>
+
+a *metrics* data.frame
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> clicks </th>
+   <th style="text-align:left;"> costMicros </th>
+   <th style="text-align:right;"> ctr </th>
+   <th style="text-align:right;"> averageCpc </th>
+   <th style="text-align:left;"> impressions </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 139 </td>
+   <td style="text-align:left;"> 35770000 </td>
+   <td style="text-align:right;"> 0.0630672 </td>
+   <td style="text-align:right;"> 257338.13 </td>
+   <td style="text-align:left;"> 2204 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 33 </td>
+   <td style="text-align:left;"> 2190000 </td>
+   <td style="text-align:right;"> 0.0141086 </td>
+   <td style="text-align:right;"> 66363.64 </td>
+   <td style="text-align:left;"> 2339 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 628 </td>
+   <td style="text-align:left;"> 159470000 </td>
+   <td style="text-align:right;"> 0.0828168 </td>
+   <td style="text-align:right;"> 253933.12 </td>
+   <td style="text-align:left;"> 7583 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 64 </td>
+   <td style="text-align:left;"> 6370000 </td>
+   <td style="text-align:right;"> 0.0105471 </td>
+   <td style="text-align:right;"> 99531.25 </td>
+   <td style="text-align:left;"> 6068 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 20 </td>
+   <td style="text-align:left;"> 5240000 </td>
+   <td style="text-align:right;"> 0.0473934 </td>
+   <td style="text-align:right;"> 262000.00 </td>
+   <td style="text-align:left;"> 422 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:left;"> 234 </td>
+  </tr>
+</tbody>
+</table>
+
+
+and a *segments* data.frame.
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> device </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> DESKTOP </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> DESKTOP </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MOBILE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MOBILE </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> TABLET </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> TABLET </td>
+  </tr>
+</tbody>
+</table>
+
+
+
+
+
+
 
 
 

@@ -6,3 +6,6 @@ inst/sandbox.R
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^cran-comments\.md$
+^LICENSE\.md$
+index.md

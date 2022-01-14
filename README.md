@@ -59,7 +59,7 @@ The next step is to create a *service object* that contains the query string, yo
 ```R
 query_service <- googleAdsSearch(
   aid = '***-****-***', # Google Ads Account ID
-  query = sql_query,
+  query = g_query,
   api_version = 'v9'
   )
 ```
@@ -67,7 +67,7 @@ query_service <- googleAdsSearch(
 the resulting service query object can be passed on to the *query_google_ads* functions which sends the service object to Google's actual API service. Note, that a *MCC* ID is needed here. The handler inside *query_google_ads* processes the service object depending on its class and starts the corresponding request. 
 
 ```R
-data <- query_google_ads(
+d <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
   google_auth = google_auth,
   service = query_service,

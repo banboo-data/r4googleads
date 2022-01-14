@@ -4,16 +4,18 @@
 \alias{googleAdsSearch}
 \title{Construct googleAdsSearch Class (S3)}
 \usage{
-googleAdsSearch(aid, query = default_search())
+googleAdsSearch(aid, query = default_search(), api_version = "v9")
 }
 \arguments{
 \item{aid}{character Google account id}
 
 \item{query}{character query string or function that returns a character query string. See also
-\link[RGoogleAds]{queries}.}
+\link[r4googleads]{queries}.}
+
+\item{api_version}{Google Ads API version e.g 'v9'}
 }
 \description{
 Create an instance of a googleAdsSearch class.
 A list of Google's ads services can be found here:
-\url{https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v2.services}.
+\url{https://developers.google.com/google-ads/api/rest/reference/rest}.
 }

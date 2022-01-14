@@ -4,13 +4,15 @@
 \alias{googleAdsFields}
 \title{Construct googleAdsFields Class (S3)}
 \usage{
-googleAdsFields(tbl)
+googleAdsFields(tbl, api_version = "v9")
 }
 \arguments{
 \item{tbl}{character table argument}
+
+\item{api_version}{Google Ads API version e.g 'v9'}
 }
 \description{
 Create an instance of a googleAdsFields class.
 A list of Google's ads services and their arguments can be found here:
-\url{https://developers.google.com/google-ads/api/reference/rpc/google.ads.googleads.v2.services}.
+\url{https://developers.google.com/google-ads/api/rest/reference/rest/v9/googleAdsFields}.
 }
