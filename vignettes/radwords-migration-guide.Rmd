@@ -17,3 +17,108 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(r4googleads)
 ```
+
+## RAdwords Migration Guide - Migrating your R Code from the Adwords API towards the new Google Ads API with {**r4googleads**}
+
+Over the last couple of years Google developed a new API for its Google Ads services. On 27th of April 2022, Google will shut down the old Adwords API. By the end of April any R code relying on our RAdwords package will be deprecated. In order to keep your code and data tasks up an running, you need to refactor your R code to be compatible with new Google Ads API. We created a new R package {**r4googleads**} that will replace our RAdwords package. {**r4googleads**} provides you the full functionality of RAdwords plus additional new features!
+
+Start migrating your code now with our easy step-by-step guide!
+
+## Installation
+
+To install the latest stable version of {**r4googleads**} from R's official Comprehensive R Archive Network (CRAN) run
+
+```r{eval=FALSE,message=FALSE, warning=FALSE}
+install.packages("r4googleads")
+```
+
+or install the latest development release from GitHub using the [{remotes}](https://cran.r-project.org/web/packages/remotes/index.html) R package. 
+(the below example code assumes the {remotes} package has been installed previously.)
+
+```R
+remotes::install_github("banboo-data/r4googleads")
+```
+
+## Authentication with the API
+
+The authentication process of RAdwords and {**r4googleads**} remains the same (beside the function name). This means you can just start using the {**r4googleads**} package with your existing RAdwords authentication objects (tokens). The good news is you don´t have to run through the whole authentication process and you can just start working on the code migration!
+
+
+The previous RAdwords authentication:
+
+```R
+google_auth <- doAuth()
+```
+
+The {**r4googleads**} authentication now is:
+
+```R
+google_auth <- authenticate()
+```
+
+## Loading Data
+
+{**r4googleads**} enables you to apply the Google Ads Query Language directly. This means you can write your own SQL like syntax or use the [Query Builder](https://developers.google.com/google-ads/api/fields/v9/overview_query_builder) provided by Google.
+
+The previous RAdwords code:
+
+```R
+body <- statement(select = c('CampaignName', 'Clicks', 'Cost'),
+                  report = "CAMPAIGN_PERFORMANCE_REPORT",
+                  start = "2022-01-01",
+                  end = "2022-01-10")
+                  
+data <- getData(clientCustomerId = 'XXX-XXX-XXXX', #use Adwords Account Id (MCC Id will not work)
+                google_auth = google_auth,
+                statement = body)
+```
+
+Loading data with {**r4googleads**}:
+
+
+```R
+sql_query <- "SELECT campaign.name, metrics.clicks, metrics.cost_micros
+              FROM campaign
+              WHERE segments.date BETWEEN '2022-01-01' AND '2022-01-10'
+              AND metrics.impressions > 0
+              PARAMETERS include_drafts=true"
+
+query_service <- googleAdsSearch(
+  aid = 'XXX-XXX-XXXX', # Google Ads Accountr ID
+  query = sql_query,
+  api_version = 'v9'
+)
+
+data <- query_google_ads(
+  mcc_id = 'XXX-XXX-XXX', # Google Ads My Client Center ID
+  google_auth = google_auth,
+  service = query_service,
+  raw_data = F
+)
+```
+
+
+## Exploring the API
+
+With RAdwords you could explore the report types of the Adwords API with the `reports()` and `metrics()` methods.
+In {**r4googleads**} you can explore the available [Google Ads API reports](https://developers.google.com/google-ads/api/fields/v9/overview) with:
+
+```R
+tbl_schema_service = googleAdsFields(tbl = "campaign", api_version = 'v9')
+
+tbl_schema <- query_google_ads(
+  mcc_id = 'XXX-XXX-XXXX',
+  google_auth = tbl_schema_service,
+  service = my_service_2,
+  raw_data = F
+)
+```
+
+## Overview of functions and methods
+
+| Functionality     | RAdwords             | r4googleads        |
+|:------------------|:--------------------:|-------------------:|
+| Authentication    | doAuth()             | authenticate()     |
+| Define Query      | statement()          | googleAdsSearch()  |
+| Loading Data      | getData()            | query_google_ads() |
+| Reports & Metrics | reports(); metrics() | googleAdsFields()  |
