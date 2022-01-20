@@ -9,7 +9,7 @@ extract_data.googleAdsSearchResult <- function(x, raw_data){
   a <- fromJSON(rawToChar(x$content))
 
    if (x$status_code == "200") {
-     a$results
+     do.call("cbind",unlist(a$results, recursive = F))
    } else {
      cat("an error occured.")
      a
