@@ -18,3 +18,99 @@ default_search <- function() {
            AND metrics.impressions > 0
            PARAMETERS include_drafts=true")
 }
+
+campaign_sample <- function() {
+  sprintf("SELECT campaign.name,
+          campaign.status,
+          segments.device,
+          metrics.impressions,
+          metrics.clicks,
+          metrics.ctr,
+          metrics.average_cpc,
+          metrics.cost_micros
+          FROM campaign
+          WHERE segments.date DURING LAST_30_DAYS")
+}
+
+adgroup_sample <- function()  {
+  sprintf("SELECT campaign.id,
+          campaign.name,
+          ad_group.id,
+          ad_group.name,
+          metrics.impressions,
+          metrics.clicks,
+          metrics.cost_micros
+          FROM ad_group
+          WHERE segments.date DURING LAST_7_DAYS")
+}
+
+adgroup_sample <- function()  {
+  sprintf("SELECT ad_group.id,
+           ad_group_ad.ad.id,
+           ad_group_ad.ad.expanded_text_ad.headline_part1,
+           ad_group_ad.ad.expanded_text_ad.headline_part2,
+           ad_group_ad.status
+           FROM ad_group_ad
+           WHERE ad_group_ad.ad.type = EXPANDED_TEXT_AD")
+}
+
+hotel_ads_sample <- function()  {
+  sprintf("SELECT campaign.id,
+          campaign.advertising_channel_type,
+          ad_group.id,
+          ad_group.status,
+          metrics.impressions,
+          metrics.hotel_average_lead_value_micros,
+          segments.hotel_check_in_day_of_week,
+          segments.hotel_length_of_stay
+          FROM hotel_performance_view
+          WHERE segments.date DURING LAST_7_DAYS
+          AND campaign.advertising_channel_type = 'HOTEL'
+          AND ad_group.status = 'ENABLED'
+          ORDER BY metrics.impressions DESC
+          LIMIT 50")
+}
+
+keyword_sample <- function()  {
+  sprintf("SELECT campaign.id,
+          campaign.name,
+          ad_group.id,
+          ad_group.name,
+          ad_group_criterion.criterion_id,
+          ad_group_criterion.keyword.text,
+          ad_group_criterion.keyword.match_type,
+          metrics.impressions,
+          metrics.clicks,
+          metrics.cost_micros
+          FROM keyword_view
+          WHERE segments.date DURING LAST_7_DAYS
+          AND campaign.advertising_channel_type = 'SEARCH'
+          AND ad_group.status = 'ENABLED'
+          AND ad_group_criterion.status IN ('ENABLED', 'PAUSED')
+          ORDER BY metrics.impressions DESC
+          LIMIT 50")
+}
+
+keyword_sample_1 <- function()  {
+  sprintf("SELECT
+          ad_group_criterion.keyword.text,
+          ad_group.name,
+          campaign.name,
+          metrics.impressions,
+          metrics.clicks,
+          metrics.ctr,
+          metrics.average_cpc
+          FROM keyword_view
+          WHERE segments.date DURING LAST_30_DAYS")
+}
+
+keyword_sample_2 <- function()  {
+  sprintf("SELECT
+              ad_group.id,
+              ad_group_criterion.type,
+              ad_group_criterion.criterion_id,
+              ad_group_criterion.keyword.text,
+              ad_group_criterion.keyword.match_type
+          FROM ad_group_criterion
+          WHERE ad_group_criterion.type = KEYWORD")
+}
