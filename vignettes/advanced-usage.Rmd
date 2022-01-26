@@ -40,8 +40,7 @@ report_schema = googleAdsFields(
 
 Pass the newly created object to the standard *query_google_ads* function
 
-```r
-
+```R
 campaign_report_schema <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
   google_auth = google_auth,
@@ -52,7 +51,7 @@ campaign_report_schema <- query_google_ads(
 
 and received the desired answer based on the parameters and class of the object. 
 
-```r
+```R
 > str(campaign_report_schema)
 List of 13
  $ resourceName      : chr "googleAdsFields/campaign"
@@ -90,7 +89,7 @@ customers <- query_google_ads(
 ... customers a simple list of resources.
 
 
-```r
+```R
 > customers
 $resourceNames
 [1] "customers/8880XXXXX"

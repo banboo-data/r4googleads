@@ -155,32 +155,32 @@ The object d is a list that contains a nested data.frame: a *campaign* data.fram
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> customers/5601631765/campaigns/354500548 </td>
+   <td style="text-align:left;"> customers/**********/campaigns/354500548 </td>
    <td style="text-align:left;"> ENABLED </td>
    <td style="text-align:left;"> Brands </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> customers/5601631765/campaigns/14704583758 </td>
+   <td style="text-align:left;"> customers/**********/campaigns/14704583758 </td>
    <td style="text-align:left;"> ENABLED </td>
    <td style="text-align:left;"> google_shopping_de </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> customers/5601631765/campaigns/354500548 </td>
+   <td style="text-align:left;"> customers/**********/campaigns/354500548 </td>
    <td style="text-align:left;"> ENABLED </td>
    <td style="text-align:left;"> Brands </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> customers/5601631765/campaigns/14704583758 </td>
+   <td style="text-align:left;"> customers/**********/campaigns/14704583758 </td>
    <td style="text-align:left;"> ENABLED </td>
    <td style="text-align:left;"> google_shopping_de </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> customers/5601631765/campaigns/354500548 </td>
+   <td style="text-align:left;"> customers/**********/campaigns/354500548 </td>
    <td style="text-align:left;"> ENABLED </td>
    <td style="text-align:left;"> Brands </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> customers/5601631765/campaigns/14704583758 </td>
+   <td style="text-align:left;"> customers/**********/campaigns/14704583758 </td>
    <td style="text-align:left;"> ENABLED </td>
    <td style="text-align:left;"> google_shopping_de </td>
   </tr>

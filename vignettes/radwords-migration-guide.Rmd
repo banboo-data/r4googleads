@@ -18,9 +18,11 @@ knitr::opts_chunk$set(
 library(r4googleads)
 ```
 
-## RAdwords Migration Guide - Migrating your R Code from the Adwords API towards the new Google Ads API with {**r4googleads**}
+## RAdwords Migration Guide
 
-Over the last couple of years Google developed a new API for its Google Ads services. On 27th of April 2022, Google will shut down the old Adwords API. By the end of April any R code relying on our RAdwords package will be deprecated. In order to keep your code and data tasks up an running, you need to refactor your R code to be compatible with new Google Ads API. We created a new R package {**r4googleads**} that will replace our RAdwords package. {**r4googleads**} provides you the full functionality of RAdwords plus additional new features!
+### Migrating your R Code from the Adwords API towards the new Google Ads API with {**r4googleads**}
+
+Over the last couple of years Google developed a new API for its Google Ads services. On 27th of April 2022, Google will shut down the current Adwords API. By the end of April any R code relying on our RAdwords package will be deprecated. In order to keep your code and data tasks up an running, you need to refactor your R code to be compatible with new Google Ads API. We created a new R package {**r4googleads**} that will replace our RAdwords package. {**r4googleads**} provides you the full functionality of RAdwords plus additional new features!
 
 Start migrating your code now with our easy step-by-step guide!
 
@@ -97,6 +99,8 @@ data <- query_google_ads(
 )
 ```
 
+We provide you with a couple of Google Ads SQL samples that you can load and explore with the following function commands:`r default_search()`, `r campaign_sample()`, `r adgroup_sample()`, `r adgroup_sample_1()`, `r hotel_ads_sample()`, `r keyword_sample()`, , `r keyword_sample_1()`, `r keyword_sample_2()`
+
 
 ## Exploring the API
 
@@ -116,9 +120,9 @@ tbl_schema <- query_google_ads(
 
 ## Overview of functions and methods
 
-| Functionality     | RAdwords             | r4googleads        |
-|:------------------|:--------------------:|-------------------:|
-| Authentication    | doAuth()             | authenticate()     |
-| Define Query      | statement()          | googleAdsSearch()  |
-| Loading Data      | getData()            | query_google_ads() |
-| Reports & Metrics | reports(); metrics() | googleAdsFields()  |
+| Functionality     | RAdwords                     | r4googleads            |
+|:------------------|:----------------------------:|-----------------------:|
+| Authentication    | `r doAuth()`                 | `r authenticate()`     |
+| Define Query      | `r statement()`              | `r googleAdsSearch()`  |
+| Loading Data      | `r getData()`                | `r query_google_ads()` |
+| Reports & Metrics | `r reports()`; `r metrics()` | `r googleAdsFields()`  |

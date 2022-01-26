@@ -31,7 +31,7 @@ remotes::install_github("banboo-data/r4googleads")
 
 ## Basic Example - Load Data
 
-```r
+```R
 library(r4googleads)
 ```
 
