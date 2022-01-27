@@ -25,10 +25,7 @@ googleAdsSearch <- function(aid, query = default_search(), api_version = 'v9'){
   l
 }
 
-#' Deprecated Function
-#'
-#' For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads
-#'
+#' @rdname r4googleads-deprecated
 #' @export
 statement <- function() {
   .Deprecated("googleAdsSearch")
@@ -69,10 +66,7 @@ reports <- function(...) {
   message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads")
 }
 
-#' Deprecated Function
-#'
-#' For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads
-#'
+#' @rdname r4googleads-deprecated
 #' @export
 metrics <- function(...) {
   .Deprecated("googleAdsFields")

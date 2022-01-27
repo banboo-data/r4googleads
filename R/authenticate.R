@@ -50,7 +50,7 @@ authenticate <- function(save = T) {
   }
 }
 
-
+#' @rdname r4googleads-deprecated
 #' @export
 do_auth <- function(save = T) {
   .Deprecated("authenticate")
