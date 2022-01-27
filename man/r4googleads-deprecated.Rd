@@ -6,15 +6,16 @@
 \alias{r4googleads-deprecated}
 \alias{statement}
 \alias{metrics}
+\alias{get_data}
 \title{Deprecated Functions}
 \usage{
 do_auth(save = T)
 
-statement(...)
+statement()
 
 metrics(...)
 
-statement(...)
+get_data(...)
 }
 \description{
 You were looking for a deprecated function. Very likely you have been a user

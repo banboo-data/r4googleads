@@ -14,12 +14,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup, eval=FALSE}
-library(r4googleads)
-```
-
-## {RAdwords} Migration Guide
-
 ### Migrating your R Code from the Adwords API towards the new Google Ads API with {**r4googleads**}
 
 Over the last couple of years Google developed a new API for its Google Ads services. On 27th of April 2022, Google will shut down the current Adwords API. By the end of April any R code relying on our {**RAdwords**} package will be deprecated. In order to keep your code and data tasks up an running, you need to refactor your R code to be compatible with new Google Ads API. We created a new R package {**r4googleads**} that will replace our {**RAdwords**} package. {**r4googleads**} provides you the full functionality of {**RAdwords**} plus additional new features!
@@ -56,6 +50,7 @@ google_auth <- doAuth()
 The {**r4googleads**} authentication now is:
 
 ```{r, eval=FALSE}
+library(r4googleads)
 google_auth <- authenticate()
 ```
 
