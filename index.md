@@ -70,7 +70,7 @@ How to obtain a [Google Ads Developer Token](https://developers.google.com/googl
 
 Install the latest stable version of {**r4googleads**} from R's official Comprehensive R Archive Network (CRAN) or 
 
-```r{eval=FALSE,message=FALSE, warning=FALSE}
+```r
 install.packages("r4googleads")
 ```
 

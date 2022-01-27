@@ -18,26 +18,26 @@ The {**r4googleads**} package uses Google Ads' application programming interface
 
 To install the latest stable version of {**r4googleads**} from R's official Comprehensive R Archive Network (CRAN) run
 
-```r{eval=FALSE,message=FALSE, warning=FALSE}
+```r
 install.packages("r4googleads")
 ```
 
 or install the latest development release from GitHub using the [{remotes}](https://cran.r-project.org/web/packages/remotes/index.html) R package. 
 (the below example code assumes the {remotes} package has been installed previously.)
 
-```R
+```r
 remotes::install_github("banboo-data/r4googleads")
 ```
 
 ## Basic Example - Load Data
 
-```R
+```r
 library(r4googleads)
 ```
 
 To specify which data you want to load into your R session you can use Google's own [SQL reminiscant query language](https://developers.google.com/google-ads/api/fields/v9/overview_query_builder). The above link helps you to find out about available reports and to validate your queries online.
 
-```R
+```r
 g_query <- "SELECT
                 campaign.name, 
                 campaign.status,
@@ -56,7 +56,7 @@ g_query <- "SELECT
 The next step is to create a *service object* that contains the query string, your Google Ads Account ID and the API version you want to use. The example goes on to use one of our 3 constructors to create different service objects: *googleAdsSearch*, *googleAdsFields*,
 *listAccessibleCustomers*. 
 
-```R
+```r
 query_service <- googleAdsSearch(
   aid = '***-****-***', # Google Ads Account ID
   query = g_query,
@@ -66,7 +66,7 @@ query_service <- googleAdsSearch(
 
 the resulting service query object can be passed on to the *query_google_ads* functions which sends the service object to Google's actual API service. Note, that a *MCC* ID is needed here. The handler inside *query_google_ads* processes the service object depending on its class and starts the corresponding request. 
 
-```R
+```r
 d <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
   google_auth = google_auth,

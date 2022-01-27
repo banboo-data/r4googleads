@@ -1,4 +1,7 @@
 url: ~
 template:
   bootstrap: 5
+home:
+  sidebar:
+    structure: [links, license, community, citation, authors, dev]
 

@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, eval=FALSE}
 library(r4googleads)
 ```
 
@@ -30,16 +30,18 @@ Start migrating your code now with our easy step-by-step guide!
 
 To install the latest stable version of {**r4googleads**} from R's official Comprehensive R Archive Network (CRAN) run
 
-```r{eval=FALSE,message=FALSE, warning=FALSE}
+```{r,eval=FALSE,message=FALSE, warning=FALSE}
 install.packages("r4googleads")
 ```
 
 or install the latest development release from GitHub using the [{remotes}](https://cran.r-project.org/web/packages/remotes/index.html) R package. 
 (the below example code assumes the {remotes} package has been installed previously.)
 
-```R
+
+```{r,eval=FALSE}
 remotes::install_github("banboo-data/r4googleads")
 ```
+
 
 ## Authentication with the API
 
@@ -48,15 +50,19 @@ The authentication process of RAdwords and {**r4googleads**} remains the same (b
 
 The previous RAdwords authentication:
 
-```R
+```{r,eval=FALSE}
 google_auth <- doAuth()
 ```
 
+
+
+
 The {**r4googleads**} authentication now is:
 
-```R
+```{r, eval=FALSE}
 google_auth <- authenticate()
 ```
+
 
 ## Loading Data
 
@@ -64,7 +70,7 @@ google_auth <- authenticate()
 
 The previous RAdwords code:
 
-```R
+```{r,eval=FALSE}
 body <- statement(select = c('CampaignName', 'Clicks', 'Cost'),
                   report = "CAMPAIGN_PERFORMANCE_REPORT",
                   start = "2022-01-01",
@@ -73,12 +79,15 @@ body <- statement(select = c('CampaignName', 'Clicks', 'Cost'),
 data <- getData(clientCustomerId = 'XXX-XXX-XXXX', #use Adwords Account Id (MCC Id will not work)
                 google_auth = google_auth,
                 statement = body)
+
 ```
+
+
 
 Loading data with {**r4googleads**}:
 
 
-```R
+```{r,eval=FALSE}
 sql_query <- "SELECT campaign.name, metrics.clicks, metrics.cost_micros
               FROM campaign
               WHERE segments.date BETWEEN '2022-01-01' AND '2022-01-10'
@@ -97,7 +106,12 @@ data <- query_google_ads(
   service = query_service,
   raw_data = F
 )
+
 ```
+
+
+
+
 
 We provide you with a couple of Google Ads SQL samples that you can load and explore with the following function commands:`r default_search()`, `r campaign_sample()`, `r adgroup_sample()`, `r adgroup_sample_1()`, `r hotel_ads_sample()`, `r keyword_sample()`, , `r keyword_sample_1()`, `r keyword_sample_2()`
 
@@ -107,7 +121,8 @@ We provide you with a couple of Google Ads SQL samples that you can load and exp
 With RAdwords you could explore the report types of the Adwords API with the `reports()` and `metrics()` methods.
 In {**r4googleads**} you can explore the available [Google Ads API reports](https://developers.google.com/google-ads/api/fields/v9/overview) with:
 
-```R
+
+```{r,eval=FALSE}
 tbl_schema_service = googleAdsFields(tbl = "campaign", api_version = 'v9')
 
 tbl_schema <- query_google_ads(
@@ -116,7 +131,9 @@ tbl_schema <- query_google_ads(
   service = my_service_2,
   raw_data = F
 )
+
 ```
+
 
 ## Overview of functions and methods
 

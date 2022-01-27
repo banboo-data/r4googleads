@@ -30,7 +30,8 @@ for GoogleAds services and listing accessible customers. Please notice that all 
 First create the corresponding R object of class *GoogleAdsFields* and set its 
 parameters that will be send to Google. 
 
-```R
+
+```{r,eval=FALSE}
 report_schema = googleAdsFields(
   tbl = "campaign", # e.g. campaign report
   api_version = 'v9'
@@ -38,20 +39,28 @@ report_schema = googleAdsFields(
 
 ```
 
+
+
+
+
 Pass the newly created object to the standard *query_google_ads* function
 
-```R
+```{r,eval=FALSE}
 campaign_report_schema <- query_google_ads(
   mcc_id = '***-***-****', # Google Ads My Client Center ID
   google_auth = google_auth,
   service = report_schema,
   raw_data = F
 )
+
+
+
 ```
 
 and received the desired answer based on the parameters and class of the object. 
 
-```R
+
+```{r,eval=FALSE}
 > str(campaign_report_schema)
 List of 13
  $ resourceName      : chr "googleAdsFields/campaign"
@@ -71,11 +80,16 @@ List of 13
 ```
 
 
+
+
+
+
 ### List Customers / Accounts
 
 Listing available accounts works in similar fashion. 
 
-```R
+
+```{r,eval=FALSE}
 list_customer_service <- listAccessibleCustomers(api_version = 'v9')
 
 customers <- query_google_ads(
@@ -84,17 +98,24 @@ customers <- query_google_ads(
   service = list_customer_service,
   raw_data = F
 )
+
 ```
+
+
+
 
 ... customers a simple list of resources.
 
 
-```R
+```{r,eval=FALSE}
 > customers
 $resourceNames
 [1] "customers/8880XXXXX"
 
 ```
+
+
+
 
 
 
