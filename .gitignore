@@ -41,5 +41,4 @@ inst/sandbox.R
 
 # Google Ads API Auth
 .google.auth.RData
-docs
 inst/doc

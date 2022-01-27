@@ -1,0 +1,9 @@
+pandoc: 2.11.4
+pkgdown: 2.0.1
+pkgdown_sha: ~
+articles:
+  advanced-usage: advanced-usage.html
+  developer-guide: developer-guide.html
+  radwords-migration-guide: radwords-migration-guide.html
+last_built: 2022-01-27T11:38Z
+
