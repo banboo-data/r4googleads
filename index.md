@@ -143,152 +143,88 @@ d <- query_google_ads(
 )
 ```
 
-The object d is a list that contains a nested data.frame: a *campaign* data.frame, 
+The object d is a data.frame that contains the Google Ads statistics:
 
 <table>
  <thead>
   <tr>
-   <th style="text-align:left;"> resourceName </th>
-   <th style="text-align:left;"> status </th>
-   <th style="text-align:left;"> name </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> customers/**********/campaigns/354500548 </td>
-   <td style="text-align:left;"> ENABLED </td>
-   <td style="text-align:left;"> Brands </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> customers/**********/campaigns/14704583758 </td>
-   <td style="text-align:left;"> ENABLED </td>
-   <td style="text-align:left;"> google_shopping_de </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> customers/**********/campaigns/354500548 </td>
-   <td style="text-align:left;"> ENABLED </td>
-   <td style="text-align:left;"> Brands </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> customers/**********/campaigns/14704583758 </td>
-   <td style="text-align:left;"> ENABLED </td>
-   <td style="text-align:left;"> google_shopping_de </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> customers/**********/campaigns/354500548 </td>
-   <td style="text-align:left;"> ENABLED </td>
-   <td style="text-align:left;"> Brands </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> customers/**********/campaigns/14704583758 </td>
-   <td style="text-align:left;"> ENABLED </td>
-   <td style="text-align:left;"> google_shopping_de </td>
-  </tr>
-</tbody>
-</table>
-
-a *metrics* data.frame
-
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> clicks </th>
-   <th style="text-align:left;"> costMicros </th>
-   <th style="text-align:right;"> ctr </th>
-   <th style="text-align:right;"> averageCpc </th>
-   <th style="text-align:left;"> impressions </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> 139 </td>
-   <td style="text-align:left;"> 35770000 </td>
-   <td style="text-align:right;"> 0.0630672 </td>
-   <td style="text-align:right;"> 257338.13 </td>
-   <td style="text-align:left;"> 2204 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 33 </td>
-   <td style="text-align:left;"> 2190000 </td>
-   <td style="text-align:right;"> 0.0141086 </td>
-   <td style="text-align:right;"> 66363.64 </td>
-   <td style="text-align:left;"> 2339 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 628 </td>
-   <td style="text-align:left;"> 159470000 </td>
-   <td style="text-align:right;"> 0.0828168 </td>
-   <td style="text-align:right;"> 253933.12 </td>
-   <td style="text-align:left;"> 7583 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 64 </td>
-   <td style="text-align:left;"> 6370000 </td>
-   <td style="text-align:right;"> 0.0105471 </td>
-   <td style="text-align:right;"> 99531.25 </td>
-   <td style="text-align:left;"> 6068 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 20 </td>
-   <td style="text-align:left;"> 5240000 </td>
-   <td style="text-align:right;"> 0.0473934 </td>
-   <td style="text-align:right;"> 262000.00 </td>
-   <td style="text-align:left;"> 422 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:right;"> 0.0000000 </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;"> 234 </td>
-  </tr>
-</tbody>
-</table>
-
-
-and a *segments* data.frame.
-
-
-<table>
- <thead>
-  <tr>
+   <th style="text-align:left;"> campaign.resourceName </th>
+   <th style="text-align:left;"> campaign.status </th>
+   <th style="text-align:left;"> campaign.name </th>
+   <th style="text-align:left;"> metrics.clicks </th>
+   <th style="text-align:left;"> metrics.costMicros </th>
+   <th style="text-align:right;"> metrics.ctr </th>
+   <th style="text-align:right;"> metrics.averageCpc </th>
+   <th style="text-align:left;"> metrics.impressions </th>
    <th style="text-align:left;"> device </th>
   </tr>
  </thead>
 <tbody>
   <tr>
+   <td style="text-align:left;"> customers/*********/campaigns/354500548 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> Brands </td>
+   <td style="text-align:left;"> 139 </td>
+   <td style="text-align:left;"> 35770000 </td>
+   <td style="text-align:right;"> 0.0630672 </td>
+   <td style="text-align:right;"> 257338.13 </td>
+   <td style="text-align:left;"> 2204 </td>
    <td style="text-align:left;"> DESKTOP </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> customers/*********/campaigns/14704583758 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> google_shopping_de </td>
+   <td style="text-align:left;"> 33 </td>
+   <td style="text-align:left;"> 2190000 </td>
+   <td style="text-align:right;"> 0.0141086 </td>
+   <td style="text-align:right;"> 66363.64 </td>
+   <td style="text-align:left;"> 2339 </td>
    <td style="text-align:left;"> DESKTOP </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> customers/*********/campaigns/354500548 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> Brands </td>
+   <td style="text-align:left;"> 628 </td>
+   <td style="text-align:left;"> 159470000 </td>
+   <td style="text-align:right;"> 0.0828168 </td>
+   <td style="text-align:right;"> 253933.12 </td>
+   <td style="text-align:left;"> 7583 </td>
    <td style="text-align:left;"> MOBILE </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> customers/*********/campaigns/14704583758 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> google_shopping_de </td>
+   <td style="text-align:left;"> 64 </td>
+   <td style="text-align:left;"> 6370000 </td>
+   <td style="text-align:right;"> 0.0105471 </td>
+   <td style="text-align:right;"> 99531.25 </td>
+   <td style="text-align:left;"> 6068 </td>
    <td style="text-align:left;"> MOBILE </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> customers/*********/campaigns/354500548 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> Brands </td>
+   <td style="text-align:left;"> 20 </td>
+   <td style="text-align:left;"> 5240000 </td>
+   <td style="text-align:right;"> 0.0473934 </td>
+   <td style="text-align:right;"> 262000.00 </td>
+   <td style="text-align:left;"> 422 </td>
    <td style="text-align:left;"> TABLET </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> customers/*********/campaigns/14704583758 </td>
+   <td style="text-align:left;"> ENABLED </td>
+   <td style="text-align:left;"> google_shopping_de </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:left;"> 234 </td>
    <td style="text-align:left;"> TABLET </td>
   </tr>
 </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
