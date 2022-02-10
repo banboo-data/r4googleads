@@ -18,8 +18,7 @@ Imports:
     jsonlite,
 Suggests: 
     rmarkdown,
-    knitr,
-    testthat
+    knitr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
