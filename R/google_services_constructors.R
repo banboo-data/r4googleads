@@ -59,7 +59,7 @@ googleAdsFields <- function(tbl, api_version = 'v9'){
 #' Deprecated Function
 #'
 #' For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads
-#'
+#' @rdname r4googleads-deprecated
 #' @export
 reports <- function(...) {
   .Deprecated("googleAdsFields")

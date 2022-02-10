@@ -4,7 +4,13 @@
 \alias{query_google_ads}
 \title{Query Google Ads Data}
 \usage{
-query_google_ads(mcc_id, google_auth, service, raw_data = F)
+query_google_ads(
+  mcc_id,
+  google_auth,
+  service,
+  raw_data = F,
+  convert_micros = 1e+06
+)
 }
 \arguments{
 \item{mcc_id}{Google Ads Client Center MCC Id}
@@ -14,6 +20,8 @@ query_google_ads(mcc_id, google_auth, service, raw_data = F)
 \item{service}{googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.}
 
 \item{raw_data}{T/F returns raw data or content only}
+
+\item{convert_micros}{converts micros data: divides data by 1e6, if NULL no conversion will be applied.}
 }
 \value{
 Google Services return object either with raw or processed data (default).
