@@ -20,6 +20,7 @@
 # RStudio files
 .Rproj.user/
 .Rproj.user
+r4googleads.Rproj
 
 # produced vignettes
 vignettes/*.html

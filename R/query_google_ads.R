@@ -7,7 +7,7 @@
 #' @param google_auth auth object
 #' @param service googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.
 #' @param raw_data T/F returns raw data or content only
-#' @param conver_micros converts micros data by 1e6, if NULL no conversion will be applied
+#' @param convert_micros converts micros data: divides data by 1e6, if NULL no conversion will be applied.
 #'
 #' @return Google Services return object either with raw or processed data (default).
 #'

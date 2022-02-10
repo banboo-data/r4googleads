@@ -20,19 +20,19 @@
   #   Client token from Google authentication server.
   if (!exists("credentials")) {
     cat("Authentication process needs your Client ID
-        from the Google Ads API project for native apps.")
+        from the Google Cloud project for native apps.")
     c.id <- readline(as.character(cat(
       "\n\nPaste the Client ID here",
       ":=>"
     )))
     if (c.id == "") {
       return(print("You have to provide a Client ID
-                   from the Google Ads API Project for native apps."))
+                   from the Google Cloud Project for native apps."))
     }
     else {
       credentials <- data.frame(c.id, stringsAsFactors = F)
       cat("Authentication process needs your Client
-          secret from the Google Ads API project.")
+          secret from the Google Cloud project.")
       credentials$c.secret <-
         readline(as.character(cat(
           "\n\nPaste the Client secret here",

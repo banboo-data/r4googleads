@@ -1,6 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-RGoogleAds.Rproj
+r4googleads.Rproj
 .google.auth.RData
 inst/sandbox.R
 ^_pkgdown\.yml$
