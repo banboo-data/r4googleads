@@ -7,6 +7,7 @@
 #' @param google_auth auth object
 #' @param service googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.
 #' @param raw_data T/F returns raw data or content only
+#' @param conver_micros converts micros data by 1e6, if NULL no conversion will be applied
 #'
 #' @return Google Services return object either with raw or processed data (default).
 #'
@@ -17,7 +18,8 @@
 query_google_ads <- function(mcc_id,
                              google_auth,
                              service,
-                             raw_data = F
+                             raw_data = F,
+                             convert_micros = 1e6
                              ) {
 
   access <- google_auth$access
@@ -46,7 +48,10 @@ query_google_ads <- function(mcc_id,
   req <- curl_fetch_memory(service$url, handle = h)
   class(req) <- append(class(req), paste0(service$service_name, "Result"))
 
-  extract_data(req, raw_data)
+  df <- extract_data(req, raw_data)
+  df[,grepl("metrics.", names(df))] <- sapply(df[,grepl("metrics.", names(df))], as.numeric)
+  if(!is.null(convert_micros)){data[,grepl("Micros|Cpc", names(data))] <- sapply(data[,grepl("Micros|Cpc", names(data))], function(x){x/convert_micros})}
+  df
 }
 
 
