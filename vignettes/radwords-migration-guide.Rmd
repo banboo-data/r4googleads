@@ -14,9 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-### Migrating your R Code from the Adwords API towards the new Google Ads API with {**r4googleads**}
+### Migrate your R code from the Adwords API to the new Google Ads API with {**r4googleads**}
 
-Over the last couple of years Google developed a new API for its Google Ads services. On 27th of April 2022, Google will shut down the current Adwords API. By the end of April any R code relying on our {**RAdwords**} package will be deprecated. In order to keep your code and data tasks up an running, you need to refactor your R code to be compatible with new Google Ads API. We created a new R package {**r4googleads**} that will replace our {**RAdwords**} package. {**r4googleads**} provides you the full functionality of {**RAdwords**} plus additional new features!
+Over the past few years, Google has been developing a new API for its Google Ads services. On April 27, 2022, Google will shut down the current Adwords API. By the end of April, any R code that relies on our {**RAdwords**} package will be deprecated. To keep your code and data tasks running, you need to refactor your R code to be compatible with the new Google Ads API. We have created a new R package {**r4googleads**} that will replace our {**RAdwords**} package. {**r4googleads**} will give you the full functionality of {**RAdwords**} plus additional new features!
 
 Start migrating your code now with our easy step-by-step guide!
 
@@ -39,7 +39,7 @@ remotes::install_github("banboo-data/r4googleads")
 
 ## Authentication with the API
 
-The authentication process of {**RAdwords**} and {**r4googleads**} remains the same (beside the function name). This means you can just start using the {**r4googleads**} package with your existing {**RAdwords**} authentication objects (tokens). The good news is you don´t have to run through the whole authentication process and you can just start working on the code migration!
+The authentication process of {**RAdwords**} and {**r4googleads**} remains the same (except for the function name). This means that you can easily use the {**r4googleads**} package with your existing {**RAdwords**} authentication objects (tokens). The good news is that you don't have to go through the whole authentication process and can just start code migration!
 
 The previous {**RAdwords**} authentication:
 
@@ -57,7 +57,7 @@ google_auth <- authenticate()
 
 ## Loading Data
 
-{**r4googleads**} enables you to apply the Google Ads Query Language directly. This means you can write your own SQL like syntax or use the [Query Builder](https://developers.google.com/google-ads/api/fields/v9/overview_query_builder) provided by Google.
+{**r4googleads**} allows you to apply the Google Ads Query Language directly. That is, you can write your own SQL-like syntax or use the [Query Builder] (https://developers.google.com/google-ads/api/fields/v9/overview_query_builder) provided by Google.
 
 The previous {**RAdwords**} code:
 
@@ -97,13 +97,13 @@ data <- query_google_ads(
 
 ```
 
-We provide you with a couple of Google Ads SQL samples that you can load and explore with the following function commands:`default_search()`, `campaign_sample()`, `adgroup_sample()`, `adgroup_sample_1()`, `hotel_ads_sample()`, `keyword_sample()`, , `keyword_sample_1()`, `keyword_sample_2()`
+We provide you with a set of Google Ads SQL samples that you can load and explore using the following function commands:`default_search()`, `campaign_sample()`, `adgroup_sample()`, `adgroup_sample_1()`, `hotel_ads_sample()`, `keyword_sample()`, , `keyword_sample_1()`, `keyword_sample_2()`
 
 
 ## Exploring the API
 
-With {**RAdwords**} you could explore the report types of the Adwords API with the `reports()` and `metrics()` methods.
-In {**r4googleads**} you can explore the available [Google Ads API reports](https://developers.google.com/google-ads/api/fields/v9/overview) with:
+With {**RAdwords**} you can explore the report types of the Adwords API using the `reports()` and `metrics()` methods.
+In {**r4googleads**} you can explore the available [Google Ads API reports](https://developers.google.com/google-ads/api/fields/v9/overview) with the following code:
 
 ```{r,eval=FALSE}
 tbl_schema_service = googleAdsFields(tbl = "campaign", api_version = 'v9')
@@ -119,9 +119,15 @@ tbl_schema <- query_google_ads(
 
 ## Overview of functions and methods
 
+The following table provides an overview of the new methods and their corresponding predecessor functions.
+
 | Functionality     | {RAdwords}                  | {r4googleads}          |
 |:------------------|:---------------------------:|-----------------------:|
 | Authentication    | `doAuth()`                  | `authenticate()`       |
 | Define Query      | `statement()`               | `googleAdsSearch()`    |
 | Loading Data      | `getData()`                 | `query_google_ads()`   |
 | Reports & Metrics | `reports()`; `metrics()`    | `googleAdsFields()`    |
+
+## Metrics Names
+
+In {**r4googleads**} we follow the metric naming convention of the Google Ads API. The metric names in the Google Ads API may be different from the names in the Adwords API. This means that you will either need to adjust the names in your existing data schema to match the metric names from the Google Ads API report results, or rename the results data frame names to match your existing data schema. For example, `clicks` becomes `metric.clicks` or `campaign` becomes `campaign.name`.
