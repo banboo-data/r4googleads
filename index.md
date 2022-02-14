@@ -74,7 +74,7 @@ Install the latest stable version of {**r4googleads**} from R's official Compreh
 install.packages("r4googleads")
 ```
 
-install the latest development release from GitHub using the [{remotes}](https://cran.r-project.org/web/packages/remotes/index.html) R package. 
+install the latest development release from GitHub using the [{remotes}](https://CRAN.R-project.org/package=remotes) R package. 
 (the below example code assumes the {remotes} package is installed.)
 
 ```R

@@ -59,7 +59,7 @@ query_google_ads <- function(mcc_id,
 #' @export
 get_data <- function(...) {
   .Deprecated("query_google_ads")
-  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads")
+  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
 }
 
 
