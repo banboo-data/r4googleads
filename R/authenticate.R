@@ -52,11 +52,11 @@ authenticate <- function(save = T) {
 
 #' Deprecated Function
 #'
-#' For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads
+#' For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/
 #' @param ... arguments to to be passed on to the underlying functions. (note that this functions is deprecated, use authenticate().)
 #' @rdname r4googleads-deprecated
 #' @export
 do_auth <- function(...) {
   .Deprecated("authenticate")
-  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads")
+  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
 }

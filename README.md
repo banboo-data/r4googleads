@@ -9,7 +9,7 @@
 
 Welcome to the source code repository of the {**r4googleads**} package. {r4googleads} helps you to implement your advertising performance analytics in R and increase your efficiency, make your reports reproducible and flexible enough to managing even large, complex Google Ads accounts and campaigns.
 
-If you came for the user documentation and howto, please visit {**r4googleads**}' our *pkgdown* [documentation site](https://banboo-data.github.io/r4googleads). 
+If you came for the user documentation and howto, please visit {**r4googleads**}' our *pkgdown* [documentation site](https://banboo-data.github.io/r4googleads/). 
 
 The {**r4googleads**} package uses Google Ads' application programming interface to conveniently load data from *Google Ads* into an **R** environment. The Google Ads API suceeds Google's *Adwords API* and consequently, {**r4googleads**} suceeds its popular predecessor R package {**RAdwords**}.
 
@@ -22,7 +22,7 @@ To install the latest stable version of {**r4googleads**} from R's official Comp
 install.packages("r4googleads")
 ```
 
-or install the latest development release from GitHub using the [{remotes}](https://cran.r-project.org/web/packages/remotes/index.html) R package. 
+or install the latest development release from GitHub using the [{remotes}](https://CRAN.R-project.org/package=remotes) R package. 
 (the below example code assumes the {remotes} package has been installed previously.)
 
 ```r
@@ -75,4 +75,4 @@ d <- query_google_ads(
 )
 ```
 
-To learn more about creating and using our service objects visit the {r4googleads} [pkgdown documentation site](https://banboo-data.github.io/r4googleads). 
+To learn more about creating and using our service objects visit the {r4googleads} [pkgdown documentation site](https://banboo-data.github.io/r4googleads/). 
