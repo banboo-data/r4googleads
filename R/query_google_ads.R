@@ -1,12 +1,12 @@
-#' Query Google Ads Data
+#' Query 'Google Ads' Data
 #'
-#' Sends Google Ads Services objects to the Google Ads API.
+#' Sends 'Google Ads' Services objects to the 'Google Ads API'.
 #'
 #'
 #' @param mcc_id Google Ads Client Center MCC Id
 #' @param google_auth auth object
 #' @param service googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.
-#' @param raw_data T/F returns raw data or content only
+#' @param raw_data TRUE / FALSE returns raw data or content only
 #' @param convert_micros converts micros data: divides data by 1e6, if NULL no conversion will be applied.
 #'
 #' @return Google Services return object either with raw or processed data (default).
@@ -18,7 +18,7 @@
 query_google_ads <- function(mcc_id,
                              google_auth,
                              service,
-                             raw_data = F,
+                             raw_data = FALSE,
                              convert_micros = 1e6
                              ) {
 
@@ -56,10 +56,9 @@ query_google_ads <- function(mcc_id,
 
 
 #' @rdname r4googleads-deprecated
+#' @return message with deprecation notice
 #' @export
 get_data <- function(...) {
   .Deprecated("query_google_ads")
-  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
+  message("For more details on the phase out of the Google Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
 }
-
-

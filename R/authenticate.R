@@ -1,14 +1,14 @@
-#' Invoke the Authentication Process with Google
+#' Invoke the Authentication Process with 'Google'
 #'
 #' This function starts the authentication process with
-#' Google. Note that this function needs user interaction.
+#' 'Google'. Note that this function needs user interaction.
 #'
 #' @param save logical, should the authentication information should be saved on disk? Defaults to TRUE.
 #'
 #' @return data.frame containing credentials, optionally saved as .RData in the current working directory
 #'
 #' @export
-authenticate <- function(save = T) {
+authenticate <- function(save = TRUE) {
   # do user interaction to store credentials in list
   # does not expire
   if (file.exists(".google.auth.RData")) {
@@ -46,17 +46,18 @@ authenticate <- function(save = T) {
   if (exists("google_auth")) {
     google_auth
   } else {
-    cat("an error occurred.")
+    warning("an error occurred.")
   }
 }
 
 #' Deprecated Function
 #'
-#' For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/
+#' For more details on the phase out of the 'Google Adwords API' read our migration guide \href{https://banboo-data.github.io/r4googleads/}
 #' @param ... arguments to to be passed on to the underlying functions. (note that this functions is deprecated, use authenticate().)
 #' @rdname r4googleads-deprecated
+#' @return message with deprecation notice
 #' @export
 do_auth <- function(...) {
   .Deprecated("authenticate")
-  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
+  message("For more details on the phase out of the Google Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
 }

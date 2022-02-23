@@ -1,13 +1,22 @@
 #' Query Strings for Query Based Services
 #'
-#' A built-in collection of queries, mostly for the googleAdsSearch service: default_search(), ...
+#' A built-in collection of queries, mostly for the googleAdsSearch service: default_search(), campaign_sample(),
+#' adgroup_sample(), adgroup_sample_1(), hotel_ads_sample(), keyword_sample(), keyword_sample_1(), keyword_sample_2().
 #' Usually these functions are not called stand alone. Often they are used when a constructor of
-#' a query based service is called.
-#' A Google Ads Query Builder can be found here: \url{https://developers.google.com/google-ads/api/fields/v9/overview_query_builder}
+#' a query based service is called. A 'Google Ads Query Builder' can be found here: \url{https://developers.google.com/google-ads/api/fields/v9/overview_query_builder}
 #'
 #' @return character query statement
 #' @rdname queries
 #' @export
+#' @examples
+#' default_search()
+#' campaign_sample()
+#' adgroup_sample()
+#' adgroup_sample_1()
+#' hotel_ads_sample()
+#' keyword_sample()
+#' keyword_sample_1()
+#' keyword_sample_2()
 default_search <- function() {
   sprintf("SELECT campaign.name, campaign.status,
            segments.device, metrics.impressions,
@@ -44,7 +53,7 @@ adgroup_sample <- function()  {
           WHERE segments.date DURING LAST_7_DAYS")
 }
 
-adgroup_sample <- function()  {
+adgroup_sample_1 <- function()  {
   sprintf("SELECT ad_group.id,
            ad_group_ad.ad.id,
            ad_group_ad.ad.expanded_text_ad.headline_part1,

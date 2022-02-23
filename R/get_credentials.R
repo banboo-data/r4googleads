@@ -1,6 +1,6 @@
 #' @title Authentication of R app
 #' @description get_credentials authenticates the R app at the
-#' Google authentication server using OAUTH2 and receives the client token.
+#' 'Google' authentication server using OAUTH2 and receives the client token.
 #' Usually you need not to run get_credentials() explicitly since the whole authentication process is managed by \code{\link{authenticate}}.
 #' @importFrom utils browseURL
 #' @return Client token from Google authentication server.
@@ -19,9 +19,9 @@
   # Returns:
   #   Client token from Google authentication server.
   if (!exists("credentials")) {
-    cat("Authentication process needs your Client ID
+    message("Authentication process needs your Client ID
         from the Google Cloud project for native apps.")
-    c.id <- readline(as.character(cat(
+    c.id <- readline(as.character(message(
       "\n\nPaste the Client ID here",
       ":=>"
     )))
@@ -31,17 +31,17 @@
     }
     else {
       credentials <- data.frame(c.id, stringsAsFactors = F)
-      cat("Authentication process needs your Client
+      message("Authentication process needs your Client
           secret from the Google Cloud project.")
       credentials$c.secret <-
-        readline(as.character(cat(
+        readline(as.character(message(
           "\n\nPaste the Client secret here",
           ":=>"
         )))
-      cat("Authentication process needs your
+      message("Authentication process needs your
           Developer Token from the Google Ads MCC.")
       credentials$auth.developerToken <-
-        readline(as.character(cat(
+        readline(as.character(message(
           "\n\nPaste the Developer Token here",
           ":=>"
         )))
@@ -56,11 +56,11 @@
     browseURL(url)
     # Manual next-step: input code-parameter
     # to c.token variable and run load_token()
-    cat("Authentication process needs your Client
+    message("Authentication process needs your Client
         token in order to receive the access token
         from the API. Copy the Client token from
         your webbrowser and paste it here.")
-    credentials$c.token <- readline(as.character(cat(
+    credentials$c.token <- readline(as.character(message(
       "\n\nPaste the client token here",
       ":=>"
     )))

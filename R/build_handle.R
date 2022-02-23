@@ -4,12 +4,15 @@
 # modifies the curl handle object
 
 #' Prepare Curl Request
-#' 
-#' Create  
+#'
+#' Create
 
 #' @param x object of class googleAdsSearch, googleAdsFields
 #' listAccessibleCustomers
-#' @export 
+#'
+#' @return curl dandle object
+#'
+#' @export
 build_handle <- function (x) {
   UseMethod("build_handle", x)
 }

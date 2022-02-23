@@ -11,6 +11,9 @@ googleAdsFields(tbl, api_version = "v9")
 
 \item{api_version}{Google Ads API version e.g 'v9'}
 }
+\value{
+list; contains googleAdsFields Class information
+}
 \description{
 Create an instance of a googleAdsFields class.
 A list of Google's ads services and their arguments can be found here:
