@@ -9,6 +9,9 @@ listAccessibleCustomers(api_version = "v9")
 \arguments{
 \item{api_version}{Google Ads API version e.g 'v9'}
 }
+\value{
+list; contains listAccessibleCustomers Class information
+}
 \description{
 Create an instance of a listAccessibleCustomers class.
 \url{https://developers.google.com/google-ads/api/rest/reference/rest/v9/customers/listAccessibleCustomers}.

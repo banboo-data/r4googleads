@@ -10,6 +10,9 @@ build_handle(x)
 \item{x}{object of class googleAdsSearch, googleAdsFields
 listAccessibleCustomers}
 }
+\value{
+curl dandle object
+}
 \description{
 Create
 }

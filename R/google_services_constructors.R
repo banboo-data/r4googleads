@@ -9,6 +9,8 @@
 #' \link[r4googleads]{queries}.
 #' @param api_version Google Ads API version e.g 'v9'
 #'
+#' @return list; contains googleAdsSearch Class information
+#'
 #' @export
 googleAdsSearch <- function(aid, query = default_search(), api_version = 'v9'){
   # this makes both notations works, with and w/o '-'
@@ -26,6 +28,7 @@ googleAdsSearch <- function(aid, query = default_search(), api_version = 'v9'){
 }
 
 #' @rdname r4googleads-deprecated
+#' @return message with deprecation notice
 #' @export
 statement <- function() {
   .Deprecated("googleAdsSearch")
@@ -41,6 +44,8 @@ statement <- function() {
 #'
 #' @param tbl character table argument
 #' @param api_version Google Ads API version e.g 'v9'
+#'
+#' @return list; contains googleAdsFields Class information
 #'
 #' @export
 googleAdsFields <- function(tbl, api_version = 'v9'){
@@ -58,19 +63,21 @@ googleAdsFields <- function(tbl, api_version = 'v9'){
 
 #' Deprecated Function
 #'
-#' For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/
+#' For more details on the phase out of the 'Google Adwords API' read our migration guide \href{https://banboo-data.github.io/r4googleads/}
 #' @rdname r4googleads-deprecated
+#' @return message with deprecation notice
 #' @export
 reports <- function(...) {
   .Deprecated("googleAdsFields")
-  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
+  message("For more details on the phase out of the Google Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
 }
 
 #' @rdname r4googleads-deprecated
+#' @return message with deprecation notice
 #' @export
 metrics <- function(...) {
   .Deprecated("googleAdsFields")
-  message("For more details on the Google's phase out of the Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
+  message("For more details on the phase out of the Google Adwords API read our migration guide https://banboo-data.github.io/r4googleads/")
 }
 
 
@@ -79,6 +86,8 @@ metrics <- function(...) {
 #' Create an instance of a listAccessibleCustomers class.
 #' \url{https://developers.google.com/google-ads/api/rest/reference/rest/v9/customers/listAccessibleCustomers}.
 #' @param api_version Google Ads API version e.g 'v9'
+#'
+#' @return list; contains listAccessibleCustomers Class information
 #'
 #' @export
 listAccessibleCustomers <- function(api_version = 'v9'){

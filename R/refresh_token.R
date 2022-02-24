@@ -4,7 +4,7 @@
 #' @param google_auth list of credentials and access token
 #' @importFrom curl new_handle handle_setform curl_fetch_memory
 #' @importFrom jsonlite fromJSON
-#' @return New access token with corresponding time stamp.
+#' @return New access token with corresponding time stamp
 .refresh_token <- function(google_auth) {
   # This function refreshes the access token. The access token deprecates after one hour and has to updated with the refresh token.
   #

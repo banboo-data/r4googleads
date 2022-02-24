@@ -14,6 +14,9 @@ googleAdsSearch(aid, query = default_search(), api_version = "v9")
 
 \item{api_version}{Google Ads API version e.g 'v9'}
 }
+\value{
+list; contains googleAdsSearch Class information
+}
 \description{
 Create an instance of a googleAdsSearch class.
 A list of Google's ads services can be found here:

@@ -2,9 +2,9 @@
 % Please edit documentation in R/authenticate.R
 \name{authenticate}
 \alias{authenticate}
-\title{Invoke the Authentication Process with Google}
+\title{Invoke the Authentication Process with 'Google'}
 \usage{
-authenticate(save = T)
+authenticate(save = TRUE)
 }
 \arguments{
 \item{save}{logical, should the authentication information should be saved on disk? Defaults to TRUE.}
@@ -14,5 +14,5 @@ data.frame containing credentials, optionally saved as .RData in the current wor
 }
 \description{
 This function starts the authentication process with
-Google. Note that this function needs user interaction.
+'Google'. Note that this function needs user interaction.
 }

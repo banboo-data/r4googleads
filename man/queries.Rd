@@ -10,8 +10,18 @@ default_search()
 character query statement
 }
 \description{
-A built-in collection of queries, mostly for the googleAdsSearch service: default_search(), ...
+A built-in collection of queries, mostly for the googleAdsSearch service: default_search(), campaign_sample(),
+adgroup_sample(), adgroup_sample_1(), hotel_ads_sample(), keyword_sample(), keyword_sample_1(), keyword_sample_2().
 Usually these functions are not called stand alone. Often they are used when a constructor of
-a query based service is called.
-A Google Ads Query Builder can be found here: \url{https://developers.google.com/google-ads/api/fields/v9/overview_query_builder}
+a query based service is called. A 'Google Ads Query Builder' can be found here: \url{https://developers.google.com/google-ads/api/fields/v9/overview_query_builder}
+}
+\examples{
+default_search()
+campaign_sample()
+adgroup_sample()
+adgroup_sample_1()
+hotel_ads_sample()
+keyword_sample()
+keyword_sample_1()
+keyword_sample_2()
 }

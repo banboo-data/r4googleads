@@ -2,13 +2,13 @@
 % Please edit documentation in R/query_google_ads.R
 \name{query_google_ads}
 \alias{query_google_ads}
-\title{Query Google Ads Data}
+\title{Query 'Google Ads' Data}
 \usage{
 query_google_ads(
   mcc_id,
   google_auth,
   service,
-  raw_data = F,
+  raw_data = FALSE,
   convert_micros = 1e+06
 )
 }
@@ -19,7 +19,7 @@ query_google_ads(
 
 \item{service}{googleAds service object created by a service constructor such as \code{\link{googleAdsSearch}} or \code{\link{googleAdsFields}}.}
 
-\item{raw_data}{T/F returns raw data or content only}
+\item{raw_data}{TRUE / FALSE returns raw data or content only}
 
 \item{convert_micros}{converts micros data: divides data by 1e6, if NULL no conversion will be applied.}
 }
@@ -27,5 +27,5 @@ query_google_ads(
 Google Services return object either with raw or processed data (default).
 }
 \description{
-Sends Google Ads Services objects to the Google Ads API.
+Sends 'Google Ads' Services objects to the 'Google Ads API'.
 }

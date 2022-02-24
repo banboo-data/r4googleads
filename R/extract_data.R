@@ -12,7 +12,7 @@ extract_data.googleAdsSearchResult <- function(x, raw_data){
       df <- do.call("cbind",unlist(a$results, recursive = F))
       df
    } else {
-     cat("an error occured.")
+     warning("an error occured.")
      a
    }
 
