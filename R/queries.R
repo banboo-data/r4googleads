@@ -28,6 +28,8 @@ default_search <- function() {
            PARAMETERS include_drafts=true")
 }
 
+#' @rdname queries
+#' @export
 campaign_sample <- function() {
   sprintf("SELECT campaign.name,
           campaign.status,
@@ -41,6 +43,8 @@ campaign_sample <- function() {
           WHERE segments.date DURING LAST_30_DAYS")
 }
 
+#' @rdname queries
+#' @export
 adgroup_sample <- function()  {
   sprintf("SELECT campaign.id,
           campaign.name,
@@ -53,6 +57,8 @@ adgroup_sample <- function()  {
           WHERE segments.date DURING LAST_7_DAYS")
 }
 
+#' @rdname queries
+#' @export
 adgroup_sample_1 <- function()  {
   sprintf("SELECT ad_group.id,
            ad_group_ad.ad.id,
@@ -63,6 +69,8 @@ adgroup_sample_1 <- function()  {
            WHERE ad_group_ad.ad.type = EXPANDED_TEXT_AD")
 }
 
+#' @rdname queries
+#' @export
 hotel_ads_sample <- function()  {
   sprintf("SELECT campaign.id,
           campaign.advertising_channel_type,
@@ -80,6 +88,8 @@ hotel_ads_sample <- function()  {
           LIMIT 50")
 }
 
+#' @rdname queries
+#' @export
 keyword_sample <- function()  {
   sprintf("SELECT campaign.id,
           campaign.name,
@@ -100,6 +110,8 @@ keyword_sample <- function()  {
           LIMIT 50")
 }
 
+#' @rdname queries
+#' @export
 keyword_sample_1 <- function()  {
   sprintf("SELECT
           ad_group_criterion.keyword.text,
@@ -113,6 +125,8 @@ keyword_sample_1 <- function()  {
           WHERE segments.date DURING LAST_30_DAYS")
 }
 
+#' @rdname queries
+#' @export
 keyword_sample_2 <- function()  {
   sprintf("SELECT
               ad_group.id,

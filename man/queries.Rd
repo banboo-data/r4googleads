@@ -2,9 +2,30 @@
 % Please edit documentation in R/queries.R
 \name{default_search}
 \alias{default_search}
+\alias{campaign_sample}
+\alias{adgroup_sample}
+\alias{adgroup_sample_1}
+\alias{hotel_ads_sample}
+\alias{keyword_sample}
+\alias{keyword_sample_1}
+\alias{keyword_sample_2}
 \title{Query Strings for Query Based Services}
 \usage{
 default_search()
+
+campaign_sample()
+
+adgroup_sample()
+
+adgroup_sample_1()
+
+hotel_ads_sample()
+
+keyword_sample()
+
+keyword_sample_1()
+
+keyword_sample_2()
 }
 \value{
 character query statement
