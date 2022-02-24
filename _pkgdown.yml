@@ -2,6 +2,9 @@ url: ~
 template:
   bootstrap: 5
 home:
+  links: 
+  - text: Support the project - buy us a coffee!
+    href: https://buymeacoffee.com/banboo
   sidebar:
     structure: [links, license, community, citation, authors, dev]
 
