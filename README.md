@@ -5,6 +5,7 @@
 [![CRAN status](https://www.r-pkg.org/badges/version/r4googleads)](https://CRAN.R-project.org/package=r4googleads)
 [![CRAN monthly downloads](https://cranlogs.r-pkg.org/badges/r4googleads)](https://cran.r-project.org/package=r4googleads)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/banboo-data/r4googleads/workflows/R-CMD-check/badge.svg)](https://github.com/banboo-data/r4googleads/actions)
 <!-- badges: end -->
 
 <a href="https://www.buymeacoffee.com/banboo" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

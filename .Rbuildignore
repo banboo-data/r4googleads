@@ -9,3 +9,4 @@ inst/sandbox.R
 ^cran-comments\.md$
 ^LICENSE\.md$
 index.md
+^\.github$
