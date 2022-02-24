@@ -7,6 +7,8 @@
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="banboo" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+
 Welcome to the source code repository of the {**r4googleads**} package. {r4googleads} helps you to implement your advertising performance analytics in R and increase your efficiency, make your reports reproducible and flexible enough to managing even large, complex Google Ads accounts and campaigns.
 
 If you came for the user documentation and howto, please visit {**r4googleads**}' our *pkgdown* [documentation site](https://banboo-data.github.io/r4googleads/). 
