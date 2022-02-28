@@ -50,7 +50,7 @@ query_google_ads <- function(mcc_id,
 
   df <- extract_data(req, raw_data)
   df[,grepl("metrics.", names(df))] <- sapply(df[,grepl("metrics.", names(df))], as.numeric)
-  if(!is.null(convert_micros)){data[,grepl("Micros|Cpc", names(data))] <- sapply(data[,grepl("Micros|Cpc", names(data))], function(x){x/convert_micros})}
+  if(!is.null(convert_micros)){df[,grepl("Micros|Cpc", names(df))] <- sapply(df[,grepl("Micros|Cpc", names(df))], function(x){x/convert_micros})}
   df
 }
 
