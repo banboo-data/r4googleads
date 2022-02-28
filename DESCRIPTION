@@ -1,7 +1,7 @@
 Package: r4googleads
 Type: Package
 Title: 'Google Ads API' Interface
-Version: 0.1
+Version: 0.1.1
 Authors@R: c(
     person("Johannes", "Burkhardt", ,"banboodata@gmail.com", role = c("aut","cre")
     ),
